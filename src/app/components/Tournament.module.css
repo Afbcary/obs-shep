@@ -1,0 +1,108 @@
+.instruction {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+    background: -webkit-linear-gradient(left, #08216b, #a5cef7);
+    color: #fff;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 2px;
+    padding-bottom: 1px;
+    text-align: left;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+}
+
+.container_column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container_hor {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin: .6rem;
+}
+
+.label {
+    margin-left: 1rem;
+    width: 25rem;
+}
+
+.input {
+    background-color: white;
+    padding-left: 5px;
+    width: 30rem
+}
+
+.button {
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-right-color: buttonface;
+    border-bottom-color: buttonface;
+    border-right-color: #424242;
+    border-bottom-color: #424242;
+    background: silver;
+    color: black;
+    border-radius: 1px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px
+}
+
+.button:hover {
+    border: 2px inset #fff;
+    background: silver;
+    color: #424242;
+    box-shadow: -1px -1px #000;
+    padding-top: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 0px;
+}
+
+.td {
+    padding: 0.5rem;
+}
+
+.tbody tr:nth-child(odd) {
+    background-color: white;
+}
+
+.tbody tr:nth-child(even) {
+    background-color: #d1d1d1;
+}
+
+.clouds {
+    background-image: url('./images/clouds.jpg');
+    background-repeat: repeat;
+    height: 100vh;
+    width: 100vw;
+}
+
+.window {
+    border: solid;
+    border-width: 2px;
+    border-bottom-color: #424242;
+    border-right-color: #424242;
+    border-left-color: #fff;
+    border-top-color: #fff;
+    background: silver;
+    color: #212529;
+    margin: 2rem 2rem 2rem 2rem;
+    color: rgb(33, 37, 41);
+    font-family: 'MS Sans Serif', Tahoma, Verdana, Segoe, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    background-color: silver;
+    width: fit-content;
+    max-width: calc(100% - 4rem);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
