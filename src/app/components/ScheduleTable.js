@@ -28,14 +28,14 @@ export default function ScheduleTable({ schedule, sortedDatetimes, sortedFields 
               {sortedDatetimes.map(dt => <th key={dt} scope='col'>{dt}</th>)}
             </tr>
           </thead>
-          <tbody>
+          <tbody className={styles.tbody}>
             {sortedFields.map(field => (
               <tr key={field}>
                 <th scope='row'>{field}</th>
                 {sortedDatetimes.map(dt => {
                   const game = schedule.get(field)?.get(dt) || '';
                   return (
-                    <td key={dt}>
+                    <td key={dt} className={styles.td}>
                       {game}
                     </td>
                   );
