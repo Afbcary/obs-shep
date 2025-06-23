@@ -60,7 +60,7 @@ export default function Tournament() {
         const url = `${baseUrl()}/search?${params.toString()}`;
 
         try {
-          const response = await fetch(url);
+          const response = await fetch(url, {mode: 'no-cors'});
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
           }
@@ -82,7 +82,7 @@ export default function Tournament() {
 
   async function lookupEvent(eventId) {
     try {
-      const response = await fetch(baseUrl() + '/' + eventId);
+      const response = await fetch(baseUrl() + '/' + eventId, {mode: 'no-cors'});
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
