@@ -43,15 +43,21 @@ export default function Tournament() {
     setQuery(e.target.value);
   }
 
+  // https://www.ultirzr.app removed during local dev
+  // Using proxy instead to avoid CORS
+  function baseUrl() {
+    if (process.env.NODE_ENV != 'development') {
+      return 'https://www.ultirzr.app/api/v1/events';
+    }
+    return '/api/v1/events';
+  }
+
   // This useEffect hook will run whenever 'year', 'state', or 'query' changes
   useEffect(() => {
     const debounceTimer = setTimeout(() => {
       async function getTournaments() {
-        // TODO: https://www.ultirzr.app removed during local dev
-        // using proxy instead to avoid CORS
-        const baseUrl = '/api/v1/events/search';
         const params = new URLSearchParams({ query, state, year });
-        const url = `${baseUrl}?${params.toString()}`;
+        const url = `${baseUrl()}/search?${params.toString()}`;
 
         try {
           const response = await fetch(url);
@@ -75,12 +81,8 @@ export default function Tournament() {
   }, [year, state, query]); // Dependency array
 
   async function lookupEvent(eventId) {
-    // TODO: https://www.ultirzr.app removed during local dev
-    // using proxy instead to avoid CORS
-    const url = '/api/v1/events/' + eventId;
-
     try {
-      const response = await fetch(url);
+      const response = await fetch(baseUrl() + '/' + eventId);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

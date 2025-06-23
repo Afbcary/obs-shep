@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    // COMMENT FOR LOCAL DEV
+    // UNCOMMENT TO PREPARE STATIC DEPLOYMENT (npm run build)
     output: 'export',
     async rewrites() {
     return [
