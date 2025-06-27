@@ -2,8 +2,7 @@
 const nextConfig = {
     // COMMENT FOR LOCAL DEV
     // UNCOMMENT TO PREPARE STATIC DEPLOYMENT (npm run build)
-    // output: 'export',
-    crossOrigin: 'anonymous',
+    output: 'export',
     async rewrites() {
     return [
       {

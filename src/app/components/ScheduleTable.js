@@ -2,10 +2,10 @@ import tstyles from './ScheduleTable.module.css';
 import styles from './Tournament.module.css';
 
 export default function ScheduleTable({ schedule, sortedDatetimes, sortedFields }) {
-  
+
   const handleCopy = () => {
     const header = ['Field', ...sortedDatetimes].join('\t');
-    
+
     const rows = sortedFields.map(field => {
       const rowData = sortedDatetimes.map(dt => schedule.get(field)?.get(dt) || '');
       return [field, ...rowData].join('\t');
@@ -14,10 +14,13 @@ export default function ScheduleTable({ schedule, sortedDatetimes, sortedFields 
     const tsvData = [header, ...rows].join('\n');
     navigator.clipboard.writeText(tsvData);
   };
+  if (!schedule || !sortedDatetimes || !sortedFields || schedule.size == 0 || sortedDatetimes.length == 0 || sortedFields.length == 0) {
+    return <div className={styles.margin}>No field assignments found.</div>
+  }
 
   return (
-    <div>
-      <button onClick={handleCopy} className={styles.button + ' ' + tstyles.button}> 
+    <div className={styles.margin}>
+      <button onClick={handleCopy} className={styles.button + ' ' + tstyles.button}>
         Copy Table to Clipboard
       </button>
       <div>

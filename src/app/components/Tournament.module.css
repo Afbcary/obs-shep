@@ -79,7 +79,7 @@
 .clouds {
     background-image: url('./images/clouds.jpg');
     background-repeat: repeat;
-    height: 100vh;
+    height: fit-content;
     width: 100vw;
 }
 
@@ -106,4 +106,13 @@
 .main {
     display: flex;
     flex-direction: column;
+}
+
+.link {
+    color:darkblue;
+    text-decoration: underline;
+}
+
+.margin {
+  margin: 1rem 1rem 1rem 1rem;
 }

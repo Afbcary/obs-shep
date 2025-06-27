@@ -103,16 +103,16 @@ export default function Tournament() {
     );
   }
 
-  function generateSchedule(event) {
-    function setTimeAndDate(zdate, timeString, dateString) {
-      const [month, date, year] = dateString.split('/');
-      const [hours, minutes, tt] = timeString.split(/:|\s/);
-      zdate.setFullYear(year, month - 1, date)
-      const hour24 = parseInt(hours) + (tt == 'PM' && hours != '12' ? 12 : 0);
-      zdate.setHours(hour24, minutes);
-      return zdate;
-    }
+  function setTimeAndDate(zdate, timeString, dateString) {
+    const [month, date, year] = dateString.split('/');
+    const [hours, minutes, tt] = timeString.split(/:|\s/);
+    zdate.setFullYear(year, month - 1, date)
+    const hour24 = parseInt(hours) + (tt == 'PM' && hours != '12' ? 12 : 0);
+    zdate.setHours(hour24, minutes);
+    return zdate;
+  }
 
+  function generateSchedule(event) {
     let allGames = [];
     event.EventGroups.forEach(group => {
       group.EventRounds.forEach(round => {
@@ -136,7 +136,6 @@ export default function Tournament() {
     });
 
     const zdate = new Date(event.StartDate);
-
     const schedule = new Map(); // {fieldName: {datetimeString: gameString}}
     const uniqueDatetimes = new Set();
     const uniqueFields = new Set();
@@ -149,18 +148,16 @@ export default function Tournament() {
 
       var field = game.FieldName.replace(/[^0-9]+/g, '');
       const dt = setTimeAndDate(structuredClone(zdate), game.StartTime, game.StartDate)
-      const minutes = dt.getMinutes() >= 10 ? dt.getMinutes() : `0${dt.getMinutes()}`
-      const datetimeString = `${dt.getMonth() + 1}/${dt.getDate()}: ${dt.getHours()}:${minutes}`;
+      const minutes = dt.getMinutes() >= 10 ? dt.getMinutes() : `0${dt.getMinutes()}`;
+      const hours = dt.getHours() >= 10 ? dt.getHours() : `0${dt.getHours()}`;
+      const datetimeString = `${dt.getMonth() + 1}/${dt.getDate()}: ${hours}:${minutes}`;
       uniqueFields.add(field);
       uniqueDatetimes.add(datetimeString);
 
       if (!schedule.has(field)) {
         schedule.set(field, new Map());
       }
-
-      const homeTeam = game.HomeTeamName;
-      const awayTeam = game.AwayTeamName;
-      schedule.get(field).set(datetimeString, `${homeTeam}-${awayTeam}`);
+      schedule.get(field).set(datetimeString, `${game.HomeTeamName}-${game.AwayTeamName}`);
     });
 
     const sortedFields = [...uniqueFields].sort((a, b) => a - b);
@@ -173,6 +170,11 @@ export default function Tournament() {
   return (
     <div className={styles.clouds}>
       <main className={styles.main}>
+        <div className={styles.window}>
+          <h2 className={styles.instruction}>Welcome!</h2>
+          <p className={styles.margin}>Observer shepherd solves the simple problem of formatting a USAU tournament into a field assignments table.</p>
+          <p className={styles.margin}>The data here is only as fresh as Ultirzr, which reads from USAU. To ask Ultirzr to scrape the latest, click the refresh button ⟳ on the Ultirzr event page (linked in the single event table below).</p>
+        </div>
         <div className={styles.window}>
           <h2 className={styles.instruction}>Search for tournaments</h2>
           <div className={styles.container_column}>
@@ -211,6 +213,7 @@ export default function Tournament() {
                   <th>Title</th>
                   <th>Date</th>
                   <th>Location</th>
+                  <th>Ultirzr</th>
                 </tr>
               </thead>
               <tbody className={styles.tbody}>
@@ -220,6 +223,7 @@ export default function Tournament() {
                     <td className={styles.td}>{tourney.EventName}</td>
                     <td className={styles.td}>{new Date(tourney.StartDate).toDateString()}</td>
                     <td className={styles.td}>{tourney.City}, {tourney.State}</td>
+                    <td className={styles.td}><a className={styles.link} href={`https://www.ultirzr.app/event/${tourney.EventId}`}>View on Ultirzr</a></td>
                   </tr>
                 ))}
               </tbody>
