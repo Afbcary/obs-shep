@@ -1,54 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import CapsTable from './CapsTable';
+import * as Constants from './constants'
 import ScheduleTable from './ScheduleTable';
 import styles from './Tournament.module.css';
 import Image from 'next/image'
 
 export default function Tournament() {
-
-  const states = {
-    'AL': 'Alabama', 'AK': 'Alaska', 'AS': 'American Samoa', 'AZ': 'Arizona',
-    'AR': 'Arkansas', 'CA': 'California', 'CO': 'Colorado', 'CT': 'Connecticut',
-    'DE': 'Delaware', 'DC': 'District Of Columbia', 'FM': 'Federated States Of Micronesia',
-    'FL': 'Florida', 'GA': 'Georgia', 'GU': 'Guam', 'HI': 'Hawaii', 'ID': 'Idaho',
-    'IL': 'Illinois', 'IN': 'Indiana', 'IA': 'Iowa', 'KS': 'Kansas', 'KY': 'Kentucky',
-    'LA': 'Louisiana', 'ME': 'Maine', 'MH': 'Marshall Islands', 'MD': 'Maryland',
-    'MA': 'Massachusetts', 'MI': 'Michigan', 'MN': 'Minnesota', 'MS': 'Mississippi',
-    'MO': 'Missouri', 'MT': 'Montana', 'NE': 'Nebraska', 'NV': 'Nevada',
-    'NH': 'New Hampshire', 'NJ': 'New Jersey', 'NM': 'New Mexico', 'NY': 'New York',
-    'NC': 'North Carolina', 'ND': 'North Dakota', 'MP': 'Northern Mariana Islands',
-    'OH': 'Ohio', 'OK': 'Oklahoma', 'OR': 'Oregon', 'PW': 'Palau', 'PA': 'Pennsylvania',
-    'PR': 'Puerto Rico', 'RI': 'Rhode Island', 'SC': 'South Carolina', 'SD': 'South Dakota',
-    'TN': 'Tennessee', 'TX': 'Texas', 'UT': 'Utah', 'VT': 'Vermont', 'VI': 'Virgin Islands',
-    'VA': 'Virginia', 'WA': 'Washington', 'WV': 'West Virginia', 'WI': 'Wisconsin', 'WY': 'Wyoming'
-  };
-  const divisionAbbreviations = {
-    // ICC/YCC
-    'Youth Club U-17 - Girls': 'YCC17-G',
-    'Youth Club U-17 - Boys': 'YCC17-B',
-    'Youth Club U-17 - Mixed': 'YCC17-X',
-    'Youth Club U-20 - Girls': 'YCC20-G',
-    'Youth Club U-20 - Boys': 'YCC20-B',
-    'Youth Club U-20 - Mixed': 'YCC20-X',
-    // College
-    'College - Women': 'C-W',
-    'College - Men': 'C-M',
-    // Club prime
-    'Club - Women': 'W',
-    'Club - Men': 'M',
-    'Club - Mixed': 'X',
-    // Masters
-    'Masters - Women': 'M-W',
-    'Masters - Men': 'M-M',
-    'Masters - Mixed': 'M-X',
-    'Grand Masters - Women': 'GM-W',
-    'Grand Masters - Men': 'GM-M',
-    'Grand Masters - Mixed': 'GM-X',
-    'Great Grand Masters - Women': 'GGM-W',
-    'Great Grand Masters - Men': 'GGM-M',
-    'Great Grand Masters - Mixed': 'GGM-X',
-  };
 
   const [year, setYear] = useState(new Date().getFullYear());
   const [state, setState] = useState('');
@@ -58,9 +17,6 @@ export default function Tournament() {
   const [schedule, setSchedule] = useState(null);
   const [sortedDatetimes, setDateTimes] = useState(null);
   const [sortedFields, setFields] = useState(null);
-  const [halfCap, setHalf] = useState(45);
-  const [softCap, setSoft] = useState(90);
-  const [hardCap, setHard] = useState(105);
 
   function handleYearChange(e) {
     setYear(e.target.value);
@@ -71,56 +27,10 @@ export default function Tournament() {
   function handleQueryChange(e) {
     setQuery(e.target.value);
   }
-  function handleHalfCapChange(e) {
-    setHalf(e.target.value);
-  }
-  function handleSoftCapChange(e) {
-    setSoft(e.target.value);
-  }
-  function handleHardCapChange(e) {
-    setHard(e.target.value);
-  }
 
   function getDivision(division) {
-    if (divisionAbbreviations[division]) return divisionAbbreviations[division];
+    if (Constants.divisionAbbreviations[division]) return Constants.divisionAbbreviations[division];
     return division;
-  }
-
-  // TODO: Also add maximum and minimum values for caps.
-  function getCapTime(cap, datetime) {
-    var capTime;
-    switch (cap) {
-      case 'half':
-        capTime = halfCap;
-        break;
-      case 'soft':
-        capTime = softCap;
-        break;
-      case 'hard':
-        capTime = hardCap;
-        break;
-      default:
-        capTime = 0;
-    }
-
-    const timeMatch = datetime.match(/:\s*(.*)/);
-    if (!timeMatch) {
-      return 'Error';
-    }
-    const timeString = timeMatch[1]; // e.g., "13:30"
-
-    const date = new Date(`1/1/2000 ${timeString}`);
-    if (isNaN(date)) {
-      return 'Error';
-    }
-
-    date.setMinutes(date.getMinutes() + capTime);
-
-    return date.toLocaleTimeString('en-US', {
-      hour: 'numeric',
-      minute: '2-digit',
-      hour12: true,
-    });
   }
 
   // https://www.ultirzr.app removed during local dev
@@ -177,7 +87,7 @@ export default function Tournament() {
 
   function stateOptions() {
     return (
-      Object.entries(states).map(([key, value]) => {
+      Object.entries(Constants.states).map(([key, value]) => {
         return <option key={key} id={key} value={key}>{value} ({key})</option>
       })
     );
@@ -298,7 +208,7 @@ export default function Tournament() {
         <div className={styles.window}>
           <p className={styles.instruction}>Select a single event</p>
           {tournaments ? (
-            <table>
+            <table className={styles.margin}>
               <thead>
                 <tr>
                   <th>Select</th>
@@ -321,50 +231,9 @@ export default function Tournament() {
               </tbody>
             </table>
           ) : <p>No tounaments found</p>}
-        </div>
-        {event ? <div className={styles.window}>
-          <h2 className={styles.instruction}>Games Table</h2>
-          <ScheduleTable schedule={schedule} sortedDatetimes={sortedDatetimes} sortedFields={sortedFields} />
-          <p className={styles.margin}>Format: team1 (seed)-team2 (seed) (age division-gender division)</p>
-        </div>
-          : <></>}
-        {event ? <div className={styles.window}>
-          <p className={styles.instruction}>Cap Times</p>
-          <div className={styles.container_column}>
-            <div className={styles.container_hor}>
-              <label htmlFor='halfInput' className={styles.smalllabel}>Half Cap</label>
-              <input value={halfCap} onChange={handleHalfCapChange} id='halfInput' className={styles.smallinput} type='number'></input>
-            </div>
-            <div className={styles.container_hor}>
-              <label htmlFor='softInput' className={styles.smalllabel}>Soft Cap</label>
-              <input value={softCap} onChange={handleSoftCapChange} id='softInput' className={styles.smallinput} type='number'></input>
-            </div>          <div className={styles.container_hor}>
-              <label htmlFor='hardInput' className={styles.smalllabel}>Hard Cap</label>
-              <input value={hardCap} onChange={handleHardCapChange} id='hardInput' className={styles.smallinput} type='number'></input>
-            </div>
           </div>
-          <table className={styles.margin}>
-            <thead>
-              <tr>
-                <th className={styles.th}>Round Time</th>
-                <th className={styles.th}>Half Cap</th>
-                <th className={styles.th}>Soft Cap</th>
-                <th className={styles.th}>Hard Cap</th>
-              </tr>
-            </thead>
-            <tbody className={styles.tbody}>
-              {sortedDatetimes.map(datetime => (
-                <tr key={`${datetime}-caps`}>
-                  <td className={styles.td}>{datetime}</td>
-                  <td className={styles.td}>{getCapTime('half', datetime)}</td>
-                  <td className={styles.td}>{getCapTime('soft', datetime)}</td>
-                  <td className={styles.td}>{getCapTime('hard', datetime)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-          : <></>}
+          <ScheduleTable schedule={schedule} sortedDatetimes={sortedDatetimes} sortedFields={sortedFields}/>
+          <CapsTable sortedDatetimes={sortedDatetimes}/>
       </main>
     </div>
   )

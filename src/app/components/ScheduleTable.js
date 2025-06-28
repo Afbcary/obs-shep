@@ -19,35 +19,42 @@ export default function ScheduleTable({ schedule, sortedDatetimes, sortedFields 
   }
 
   return (
-    <div className={styles.margin}>
-      <button onClick={handleCopy} className={styles.button + ' ' + tstyles.button}>
-        Copy Table to Clipboard
-      </button>
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th scope='col'>Field</th>
-              {sortedDatetimes.map(dt => <th key={dt} scope='col'>{dt}</th>)}
-            </tr>
-          </thead>
-          <tbody className={styles.tbody}>
-            {sortedFields.map(field => (
-              <tr key={field}>
-                <th scope='row'>{field}</th>
-                {sortedDatetimes.map(dt => {
-                  const game = schedule.get(field)?.get(dt) || '';
-                  return (
-                    <td key={dt} className={styles.td}>
-                      {game}
-                    </td>
-                  );
-                })}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <div>
+      {event ? <div className={styles.window}>
+        <h2 className={styles.instruction}>Games Table</h2>
+        <div className={styles.margin}>
+          <button onClick={handleCopy} className={styles.button + ' ' + tstyles.button}>
+            Copy Table to Clipboard
+          </button>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th scope='col'>Field</th>
+                  {sortedDatetimes.map(dt => <th key={dt} scope='col'>{dt}</th>)}
+                </tr>
+              </thead>
+              <tbody className={styles.tbody}>
+                {sortedFields.map(field => (
+                  <tr key={field}>
+                    <th scope='row'>{field}</th>
+                    {sortedDatetimes.map(dt => {
+                      const game = schedule.get(field)?.get(dt) || '';
+                      return (
+                        <td key={dt} className={styles.td}>
+                          {game}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p className={styles.margin}>Format: team1 (seed)-team2 (seed) (age division-gender division)</p>
       </div>
+        : <></>}
     </div>
   );
 }

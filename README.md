@@ -21,7 +21,10 @@ Deploy as static site:
 ```bash
 npm run build
 ```
+3. On pushs to the main branch, Github kicks off a deployment workflow to the Github pages site.
 
 ## Styling
-Windows 95 styles inspired by https://alexbsoft.github.io/win95.css/cloud.html#
+Windows 95 styles inspired by 
+* https://alexbsoft.github.io/win95.css/cloud.html#
+* https://alexbsoft.github.io/win95.css/#
 
