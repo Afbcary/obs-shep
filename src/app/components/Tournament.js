@@ -23,6 +23,32 @@ export default function Tournament() {
     'TN': 'Tennessee', 'TX': 'Texas', 'UT': 'Utah', 'VT': 'Vermont', 'VI': 'Virgin Islands',
     'VA': 'Virginia', 'WA': 'Washington', 'WV': 'West Virginia', 'WI': 'Wisconsin', 'WY': 'Wyoming'
   };
+  const divisionAbbreviations = {
+    // ICC/YCC
+    'Youth Club U-17 - Girls': 'YCC17-G',
+    'Youth Club U-17 - Boys': 'YCC17-B',
+    'Youth Club U-17 - Mixed': 'YCC17-X',
+    'Youth Club U-20 - Girls': 'YCC20-G',
+    'Youth Club U-20 - Boys': 'YCC20-B',
+    'Youth Club U-20 - Mixed': 'YCC20-X',
+    // College
+    'College - Women': 'C-W',
+    'College - Men': 'C-M',
+    // Club prime
+    'Club - Women': 'W',
+    'Club - Men': 'M',
+    'Club - Mixed': 'X',
+    // Masters
+    'Masters - Women': 'M-W',
+    'Masters - Men': 'M-M',
+    'Masters - Mixed': 'M-X',
+    'Grand Masters - Women': 'GM-W',
+    'Grand Masters - Men': 'GM-M',
+    'Grand Masters - Mixed': 'GM-X',
+    'Great Grand Masters - Women': 'GGM-W',
+    'Great Grand Masters - Men': 'GGM-M',
+    'Great Grand Masters - Mixed': 'GGM-X',
+  };
 
   const [year, setYear] = useState(new Date().getFullYear());
   const [state, setState] = useState('');
@@ -32,6 +58,9 @@ export default function Tournament() {
   const [schedule, setSchedule] = useState(null);
   const [sortedDatetimes, setDateTimes] = useState(null);
   const [sortedFields, setFields] = useState(null);
+  const [halfCap, setHalf] = useState(45);
+  const [softCap, setSoft] = useState(90);
+  const [hardCap, setHard] = useState(105);
 
   function handleYearChange(e) {
     setYear(e.target.value);
@@ -41,6 +70,57 @@ export default function Tournament() {
   }
   function handleQueryChange(e) {
     setQuery(e.target.value);
+  }
+  function handleHalfCapChange(e) {
+    setHalf(e.target.value);
+  }
+  function handleSoftCapChange(e) {
+    setSoft(e.target.value);
+  }
+  function handleHardCapChange(e) {
+    setHard(e.target.value);
+  }
+
+  function getDivision(division) {
+    if (divisionAbbreviations[division]) return divisionAbbreviations[division];
+    return division;
+  }
+
+  // TODO: Also add maximum and minimum values for caps.
+  function getCapTime(cap, datetime) {
+    var capTime;
+    switch (cap) {
+      case 'half':
+        capTime = halfCap;
+        break;
+      case 'soft':
+        capTime = softCap;
+        break;
+      case 'hard':
+        capTime = hardCap;
+        break;
+      default:
+        capTime = 0;
+    }
+
+    const timeMatch = datetime.match(/:\s*(.*)/);
+    if (!timeMatch) {
+      return 'Error';
+    }
+    const timeString = timeMatch[1]; // e.g., "13:30"
+
+    const date = new Date(`1/1/2000 ${timeString}`);
+    if (isNaN(date)) {
+      return 'Error';
+    }
+
+    date.setMinutes(date.getMinutes() + capTime);
+
+    return date.toLocaleTimeString('en-US', {
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true,
+    });
   }
 
   // https://www.ultirzr.app removed during local dev
@@ -113,21 +193,32 @@ export default function Tournament() {
   }
 
   function generateSchedule(event) {
-    let allGames = [];
+    // division: [games]
+    let allGames = new Map();
+    // EventGroupName: "College - Men "
     event.EventGroups.forEach(group => {
+      const division = getDivision(group.EventGroupName.trim());
+      if (!allGames.has(division)) {
+        allGames.set(division, []);
+      }
       group.EventRounds.forEach(round => {
         // Games from Pools
         if (round.Pools) {
           round.Pools.forEach(pool => {
-            if (pool.Games) allGames.push(...pool.Games);
+            if (pool.Games) allGames.get(division).push(...pool.Games);
           });
+        }
+        if (round.Clusters) {
+          round.Clusters.forEach(cluster => {
+            if (cluster.Games) allGames.get(division).push(...cluster.Games);
+          })
         }
         // Games from Brackets
         if (round.Brackets) {
           round.Brackets.forEach(bracket => {
             if (bracket.Stage) {
               bracket.Stage.forEach(stage => {
-                if (stage.Games) allGames.push(...stage.Games);
+                if (stage.Games) allGames.get(division).push(...stage.Games);
               });
             }
           });
@@ -139,26 +230,27 @@ export default function Tournament() {
     const schedule = new Map(); // {fieldName: {datetimeString: gameString}}
     const uniqueDatetimes = new Set();
     const uniqueFields = new Set();
+    for (const [division, games] of allGames.entries()) {
+      games.forEach(game => {
+        if (!game.FieldName || !game.StartTime || !game.StartDate) {
+          console.log(`skipped game without field, time, or date: ${JSON.stringify(game)}`)
+          return;
+        }
 
-    allGames.forEach(game => {
-      if (!game.FieldName || !game.StartTime || !game.StartDate) {
-        console.log(`skipped game without field, time, or date: ${JSON.stringify(game)}`)
-        return;
-      }
+        const field = game.FieldName.replace(/[^0-9]+/g, '');
+        const dt = setTimeAndDate(structuredClone(zdate), game.StartTime, game.StartDate)
+        const minutes = dt.getMinutes() >= 10 ? dt.getMinutes() : `0${dt.getMinutes()}`;
+        const hours = dt.getHours() >= 10 ? dt.getHours() : `0${dt.getHours()}`;
+        const datetimeString = `${dt.getMonth() + 1}/${dt.getDate()}: ${hours}:${minutes}`;
+        uniqueFields.add(field);
+        uniqueDatetimes.add(datetimeString);
 
-      var field = game.FieldName.replace(/[^0-9]+/g, '');
-      const dt = setTimeAndDate(structuredClone(zdate), game.StartTime, game.StartDate)
-      const minutes = dt.getMinutes() >= 10 ? dt.getMinutes() : `0${dt.getMinutes()}`;
-      const hours = dt.getHours() >= 10 ? dt.getHours() : `0${dt.getHours()}`;
-      const datetimeString = `${dt.getMonth() + 1}/${dt.getDate()}: ${hours}:${minutes}`;
-      uniqueFields.add(field);
-      uniqueDatetimes.add(datetimeString);
-
-      if (!schedule.has(field)) {
-        schedule.set(field, new Map());
-      }
-      schedule.get(field).set(datetimeString, `${game.HomeTeamName}-${game.AwayTeamName}`);
-    });
+        if (!schedule.has(field)) {
+          schedule.set(field, new Map());
+        }
+        schedule.get(field).set(datetimeString, `${game.HomeTeamName}-${game.AwayTeamName} (${division})`);
+      })
+    };
 
     const sortedFields = [...uniqueFields].sort((a, b) => a - b);
     const sortedDatetimes = [...uniqueDatetimes].sort();
@@ -172,7 +264,7 @@ export default function Tournament() {
       <main className={styles.main}>
         <div className={styles.window}>
           <h2 className={styles.instruction}>Welcome!</h2>
-          <p className={styles.margin}>Observer shepherd solves the simple problem of formatting a USAU tournament into a field assignments table.</p>
+          <p className={styles.margin}>Observer assigner solves the simple problem of formatting a USAU tournament into a field assignments table.</p>
           <p className={styles.margin}>The data here is only as fresh as Ultirzr, which reads from USAU. To ask Ultirzr to scrape the latest, click the refresh button ⟳ on the Ultirzr event page (linked in the single event table below).</p>
         </div>
         <div className={styles.window}>
@@ -233,6 +325,44 @@ export default function Tournament() {
         {event ? <div className={styles.window}>
           <h2 className={styles.instruction}>Games Table</h2>
           <ScheduleTable schedule={schedule} sortedDatetimes={sortedDatetimes} sortedFields={sortedFields} />
+          <p className={styles.margin}>Format: team1 (seed)-team2 (seed) (age division-gender division)</p>
+        </div>
+          : <></>}
+        {event ? <div className={styles.window}>
+          <p className={styles.instruction}>Cap Times</p>
+          <div className={styles.container_column}>
+            <div className={styles.container_hor}>
+              <label htmlFor='halfInput' className={styles.smalllabel}>Half Cap</label>
+              <input value={halfCap} onChange={handleHalfCapChange} id='halfInput' className={styles.smallinput} type='number'></input>
+            </div>
+            <div className={styles.container_hor}>
+              <label htmlFor='softInput' className={styles.smalllabel}>Soft Cap</label>
+              <input value={softCap} onChange={handleSoftCapChange} id='softInput' className={styles.smallinput} type='number'></input>
+            </div>          <div className={styles.container_hor}>
+              <label htmlFor='hardInput' className={styles.smalllabel}>Hard Cap</label>
+              <input value={hardCap} onChange={handleHardCapChange} id='hardInput' className={styles.smallinput} type='number'></input>
+            </div>
+          </div>
+          <table className={styles.margin}>
+            <thead>
+              <tr>
+                <th className={styles.th}>Round Time</th>
+                <th className={styles.th}>Half Cap</th>
+                <th className={styles.th}>Soft Cap</th>
+                <th className={styles.th}>Hard Cap</th>
+              </tr>
+            </thead>
+            <tbody className={styles.tbody}>
+              {sortedDatetimes.map(datetime => (
+                <tr key={`${datetime}-caps`}>
+                  <td className={styles.td}>{datetime}</td>
+                  <td className={styles.td}>{getCapTime('half', datetime)}</td>
+                  <td className={styles.td}>{getCapTime('soft', datetime)}</td>
+                  <td className={styles.td}>{getCapTime('hard', datetime)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
           : <></>}
       </main>

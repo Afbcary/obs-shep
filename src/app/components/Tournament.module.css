@@ -37,6 +37,17 @@
     width: 30rem
 }
 
+.smallinput {
+    background-color: white;
+    padding-left: 5px;
+    width: fit-content;
+}
+
+.smalllabel {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
 .button {
     border-width: 2px;
     border-style: outset;
@@ -65,7 +76,15 @@
 }
 
 .td {
-    padding: 0.5rem;
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.th {
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
 .tbody tr:nth-child(odd) {
@@ -109,10 +128,10 @@
 }
 
 .link {
-    color:darkblue;
+    color: darkblue;
     text-decoration: underline;
 }
 
 .margin {
-  margin: 1rem 1rem 1rem 1rem;
+    margin: 1rem 1rem 1rem 1rem;
 }
