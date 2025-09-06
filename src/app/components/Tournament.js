@@ -17,7 +17,11 @@ export default function Tournament() {
   const [schedule, setSchedule] = useState(null);
   const [sortedDatetimes, setDateTimes] = useState(null);
   const [sortedFields, setFields] = useState(null);
-  const [minimumStartDate, setMinimumStartDate] = useState(new Date().toISOString().split('T')[0]); // YYYY-MM-DD
+  const [minimumStartDate, setMinimumStartDate] = useState(() => {
+    const date = new Date();
+    date.setDate(date.getDate() - 7);
+    return date.toISOString().split('T')[0];
+  }); // YYYY-MM-DD
   const [sortStartDate, setSortStartDate] = useState('asc');
 
   function handleYearChange(e) {
