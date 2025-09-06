@@ -15,7 +15,8 @@ export default function ScheduleTable({ schedule, sortedDatetimes, sortedFields 
     navigator.clipboard.writeText(tsvData);
   };
   if (!schedule || !sortedDatetimes || !sortedFields || schedule.size == 0 || sortedDatetimes.length == 0 || sortedFields.length == 0) {
-    return <div className={styles.margin}>No field assignments found.</div>
+    return <></>
+    // return <div className={styles.margin}>No field assignments found.</div>
   }
 
   return (

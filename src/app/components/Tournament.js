@@ -17,6 +17,8 @@ export default function Tournament() {
   const [schedule, setSchedule] = useState(null);
   const [sortedDatetimes, setDateTimes] = useState(null);
   const [sortedFields, setFields] = useState(null);
+  const [minimumStartDate, setMinimumStartDate] = useState(new Date().toISOString().split('T')[0]); // YYYY-MM-DD
+  const [sortStartDate, setSortStartDate] = useState('asc');
 
   function handleYearChange(e) {
     setYear(e.target.value);
@@ -26,6 +28,12 @@ export default function Tournament() {
   }
   function handleQueryChange(e) {
     setQuery(e.target.value);
+  }
+  function handleMinimumStartDateChange(e) {
+    setMinimumStartDate(e.target.value);
+  }
+  function handleSortStartDateChange(e) {
+    setSortStartDate(e.target.value);
   }
 
   function getDivision(division) {
@@ -42,11 +50,11 @@ export default function Tournament() {
     return '/api/v1/events';
   }
 
-  // This useEffect hook will run whenever 'year', 'state', or 'query' changes
+  // This useEffect hook will run whenever the search params change.
   useEffect(() => {
     const debounceTimer = setTimeout(() => {
       async function getTournaments() {
-        const params = new URLSearchParams({ query, state, year });
+        const params = new URLSearchParams({ query, state, year, minimumStartDate, sortStartDate});
         const url = `${baseUrl()}/search?${params.toString()}`;
 
         try {
@@ -68,21 +76,11 @@ export default function Tournament() {
     // Cleanup function to cancel the timer if the user types again quickly
     return () => clearTimeout(debounceTimer);
 
-  }, [year, state, query]); // Dependency array
+  }, [query, state, year, minimumStartDate, sortStartDate]); // Dependency array
 
-  async function lookupEvent(eventId) {
-    try {
-      const response = await fetch(baseUrl() + '/' + eventId);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      setEvent(data.event);
-      generateSchedule(data.event);
-    } catch (error) {
-      console.error('Error fetching event:', error);
-      setEvent(null);
-    }
+  async function selectEvent(tourney) {
+      setEvent(tourney);
+      generateSchedule(tourney);
   }
 
   function stateOptions() {
@@ -100,6 +98,12 @@ export default function Tournament() {
     const hour24 = parseInt(hours) + (tt == 'PM' && hours != '12' ? 12 : 0);
     zdate.setHours(hour24, minutes);
     return zdate;
+  }
+
+  // TODO: use ultirzr API differently to get future events only 
+  function isInPast(event) {
+    const endDateTime = new Date(event.EndDate);
+    return endDateTime < new Date();
   }
 
   function generateSchedule(event) {
@@ -146,9 +150,9 @@ export default function Tournament() {
           console.log(`skipped game without field, time, or date: ${JSON.stringify(game)}`)
           return;
         }
-
-        const field = game.FieldName.replace(/[^0-9]+/g, '');
         const dt = setTimeAndDate(structuredClone(zdate), game.StartTime, game.StartDate)
+        // const field = game.FieldName.replace(/[^0-9]+/g, '');
+        const field = game.FieldName;
         const minutes = dt.getMinutes() >= 10 ? dt.getMinutes() : `0${dt.getMinutes()}`;
         const hours = dt.getHours() >= 10 ? dt.getHours() : `0${dt.getHours()}`;
         const datetimeString = `${dt.getMonth() + 1}/${dt.getDate()}: ${hours}:${minutes}`;
@@ -158,11 +162,32 @@ export default function Tournament() {
         if (!schedule.has(field)) {
           schedule.set(field, new Map());
         }
+        // TODO: Rather than creating the game string here, pass a game object, preserving the independent fields. 
+        // Use the division field later to change formatting (background color and contrasting text color).
         schedule.get(field).set(datetimeString, `${game.HomeTeamName}-${game.AwayTeamName} (${division})`);
       })
     };
 
-    const sortedFields = [...uniqueFields].sort((a, b) => a - b);
+    const sortedFields = [...uniqueFields].sort((a, b) => {
+      const re = /(\d+)([a-zA-Z]*)/;
+      const matchA = a.match(re);
+      const matchB = b.match(re);
+
+      if (matchA && matchB) {
+      const numA = parseInt(matchA[1], 10);
+      const charA = matchA[2];
+      const numB = parseInt(matchB[1], 10);
+      const charB = matchB[2];
+
+      if (numA !== numB) {
+        return numA - numB;
+      }
+      return charA.localeCompare(charB);
+      }
+
+      // Fallback to localeCompare if regex doesn't match
+      return a.localeCompare(b);
+    });
     const sortedDatetimes = [...uniqueDatetimes].sort();
     setSchedule(schedule);
     setDateTimes(sortedDatetimes);
@@ -181,9 +206,9 @@ export default function Tournament() {
           <h2 className={styles.instruction}>Search for tournaments</h2>
           <div className={styles.container_column}>
             <div className={styles.container_hor}>
-              <Image src={require('./images/win-cal.png')} width={30}
+              <Image src={require('./images/appwizard-5.png')} width={30}
                 height={30}
-                alt='Windows Calendar' />
+                alt='App Wizard' />
               <label htmlFor='yearInput' className={styles.label}>Year</label>
               <input value={year} onChange={handleYearChange} id='yearInput' className={styles.input} type='number'></input>
             </div>
@@ -193,6 +218,7 @@ export default function Tournament() {
                 alt='Windows World' />
               <label htmlFor='stateInput' className={styles.label}>State</label>
               <select value={state} onChange={handleStateChange} id='stateInput' className={styles.input}>
+                <option defaultValue={true} key='allStates' id='allStates' value={null}>All States</option>
                 {stateOptions()}
               </select>
             </div>
@@ -202,6 +228,23 @@ export default function Tournament() {
                 alt='Microsoft Agent' />
               <label htmlFor='queryInput' className={styles.label}>Tournament Name</label>
               <input value={query} onChange={handleQueryChange} id='queryInput' className={styles.input} placeholder='Name (inexact match)'></input>
+            </div>
+            <div className={styles.container_hor}>
+              <Image src={require('./images/win-cal.png')} width={30}
+                height={30}
+                alt='Windows Calendar' />
+              <label htmlFor='minimumStartDateInput' className={styles.label}>Minimum Start Date</label>
+              <input type="date" value={minimumStartDate} onChange={handleMinimumStartDateChange} id='minimumStartDateInput' className={styles.input}></input>
+            </div>
+            <div className={styles.container_hor}>
+              <Image src={require('./images/clean_drive-4.png')} width={30}
+                height={30}
+                alt='Clean Drive' />
+              <label htmlFor='sortOrder' className={styles.label}>Sort Events</label>
+              <select value={sortStartDate} onChange={handleSortStartDateChange} id='sortInput' className={styles.input}>
+                <option defaultValue={'asc'} key='asc' id='asc' value={'asc'}>Ascending</option>
+                <option key='desc' id='desc' value={'desc'}>Descending</option>
+              </select>
             </div>
           </div>
         </div>
@@ -213,7 +256,7 @@ export default function Tournament() {
                 <tr>
                   <th>Select</th>
                   <th>Title</th>
-                  <th>Date</th>
+                  <th>Start Date</th>
                   <th>Location</th>
                   <th>Ultirzr</th>
                 </tr>
@@ -221,19 +264,19 @@ export default function Tournament() {
               <tbody className={styles.tbody}>
                 {tournaments.map(tourney => (
                   <tr key={tourney.EventId}>
-                    <td className={styles.td}><button onClick={() => lookupEvent(tourney.EventId)} className={styles.button}>Select</button></td>
+                    <td className={styles.td}><button onClick={() => selectEvent(tourney)} className={styles.button}>Select</button></td>
                     <td className={styles.td}>{tourney.EventName}</td>
                     <td className={styles.td}>{new Date(tourney.StartDate).toDateString()}</td>
-                    <td className={styles.td}>{tourney.City}, {tourney.State}</td>
+                    <td className={styles.td}>{tourney.City ? tourney.City : 'TBA'}, {tourney.State}</td>
                     <td className={styles.td}><a className={styles.link} href={`https://www.ultirzr.app/event/${tourney.EventId}`}>View on Ultirzr</a></td>
                   </tr>
                 ))}
               </tbody>
             </table>
           ) : <p>No tounaments found</p>}
-          </div>
-          <ScheduleTable schedule={schedule} sortedDatetimes={sortedDatetimes} sortedFields={sortedFields}/>
-          <CapsTable sortedDatetimes={sortedDatetimes}/>
+        </div>
+        <ScheduleTable schedule={schedule} sortedDatetimes={sortedDatetimes} sortedFields={sortedFields} />
+        <CapsTable sortedDatetimes={sortedDatetimes} />
       </main>
     </div>
   )

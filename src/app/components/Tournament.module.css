@@ -135,3 +135,31 @@
 .margin {
     margin: 1rem 1rem 1rem 1rem;
 }
+
+.checkbox::before {
+    height: 24px;
+    width: 24px;
+    top: 3px;
+    padding-right: 2px;
+    border: 2px inset #d5d5d5;
+    background: white;
+    box-shadow: -1px -1px 0 0 #828282;
+}
+
+.checkbox::after {
+    background-image: url('./images/check.svg');
+    width: 16px;
+    height: 16px;
+    margin: 4px;
+    top: 3px;
+}
+
+.checkbox {
+    height: 24px;
+    width: 24px;
+    top: 3px;
+    padding-right: 2px;
+    border: 2px inset #d5d5d5;
+    background: white;
+    box-shadow: -1px -1px 0 0 #828282;
+}
