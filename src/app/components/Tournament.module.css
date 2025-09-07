@@ -168,3 +168,38 @@
     margin-left: 5rem;
     margin-top: 1rem;
 }
+
+/* Mobile */
+@media (width <=40rem) {
+    .label {
+        margin-left: 0.5rem;
+        width: 8rem;
+    }
+
+    .input {
+        background-color: white;
+        padding-left: 2px;
+        width: 10rem;
+    }
+
+    .window {
+        border: solid;
+        border-width: 2px;
+        border-bottom-color: #424242;
+        border-right-color: #424242;
+        border-left-color: #fff;
+        border-top-color: #fff;
+        background: silver;
+        color: #212529;
+        margin: 1rem 0.5rem 0.5rem 0.5rem;
+        color: rgb(33, 37, 41);
+        font-family: 'MS Sans Serif', Tahoma, Verdana, Segoe, sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        background-color: silver;
+        width: fit-content;
+        max-width: calc(100% - 1rem);
+        overflow: scroll;
+    }
+
+}
