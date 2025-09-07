@@ -13,7 +13,7 @@ export default function Tournament() {
   const [state, setState] = useState('');
   const [query, setQuery] = useState('');
   const [tournaments, setTournaments] = useState(null);
-  const [event, setEvent] = useState(null);
+  const [events, setEvents] = useState([]);
   const [schedule, setSchedule] = useState(null);
   const [sortedDatetimes, setDateTimes] = useState(null);
   const [sortedFields, setFields] = useState(null);
@@ -23,6 +23,7 @@ export default function Tournament() {
     return date.toISOString().split('T')[0];
   }); // YYYY-MM-DD
   const [sortStartDate, setSortStartDate] = useState('asc');
+  const [combineEvents, setCombineEvents] = useState(false);
 
   function handleYearChange(e) {
     setYear(Number(e.target.value));
@@ -38,6 +39,14 @@ export default function Tournament() {
   }
   function handleSortStartDateChange(e) {
     setSortStartDate(e.target.value);
+  }
+  function handleCombineEventsChange(e) {
+    setCombineEvents(e.target.checked);
+  }
+
+  function getEventNames() {
+    if (events.length == 0) return 'No events selected';
+    return events.map(e => e.EventName).join(', ');
   }
 
   function getDivision(division) {
@@ -58,7 +67,7 @@ export default function Tournament() {
   useEffect(() => {
     const debounceTimer = setTimeout(() => {
       async function getTournaments() {
-        const params = new URLSearchParams({ query, state, year, minimumStartDate, sortStartDate});
+        const params = new URLSearchParams({ query, state, year, minimumStartDate, sortStartDate });
         const url = `${baseUrl()}/search?${params.toString()}`;
 
         try {
@@ -82,9 +91,15 @@ export default function Tournament() {
 
   }, [query, state, year, minimumStartDate, sortStartDate]); // Dependency array
 
-  async function selectEvent(tourney) {
-      setEvent(tourney);
-      generateSchedule(tourney);
+  function selectEvent(tourney) {
+    for (const event of events) {
+      if (event.EventId === tourney.EventId) {
+        console.log('Event already selected');
+        return;
+      }
+    }
+    setEvents(combineEvents ? [...events, tourney] : [tourney]);
+    // schedule will be generated in useEffect
   }
 
   function stateOptions() {
@@ -104,41 +119,42 @@ export default function Tournament() {
     return zdate;
   }
 
-  function generateSchedule(event) {
+  useEffect(() => {
     // division: [games]
     let allGames = new Map();
-    // EventGroupName: "College - Men "
-    event.EventGroups.forEach(group => {
-      const division = getDivision(group.EventGroupName.trim());
-      if (!allGames.has(division)) {
-        allGames.set(division, []);
-      }
-      group.EventRounds.forEach(round => {
-        // Games from Pools
-        if (round.Pools) {
-          round.Pools.forEach(pool => {
-            if (pool.Games) allGames.get(division).push(...pool.Games);
-          });
+    for (const event of events) {
+      event.EventGroups.forEach(group => {
+        // EventGroupName: "College - Men "
+        const division = getDivision(group.EventGroupName.trim());
+        if (!allGames.has(division)) {
+          allGames.set(division, []);
         }
-        if (round.Clusters) {
-          round.Clusters.forEach(cluster => {
-            if (cluster.Games) allGames.get(division).push(...cluster.Games);
-          })
-        }
-        // Games from Brackets
-        if (round.Brackets) {
-          round.Brackets.forEach(bracket => {
-            if (bracket.Stage) {
-              bracket.Stage.forEach(stage => {
-                if (stage.Games) allGames.get(division).push(...stage.Games);
-              });
-            }
-          });
-        }
+        group.EventRounds.forEach(round => {
+          // Games from Pools
+          if (round.Pools) {
+            round.Pools.forEach(pool => {
+              if (pool.Games) allGames.get(division).push(...pool.Games);
+            });
+          }
+          if (round.Clusters) {
+            round.Clusters.forEach(cluster => {
+              if (cluster.Games) allGames.get(division).push(...cluster.Games);
+            })
+          }
+          // Games from Brackets
+          if (round.Brackets) {
+            round.Brackets.forEach(bracket => {
+              if (bracket.Stage) {
+                bracket.Stage.forEach(stage => {
+                  if (stage.Games) allGames.get(division).push(...stage.Games);
+                });
+              }
+            });
+          }
+        });
       });
-    });
+    };
 
-    const zdate = new Date(event.StartDate);
     const schedule = new Map(); // {fieldName: {datetimeString: gameString}}
     const uniqueDatetimes = new Set();
     const uniqueFields = new Set();
@@ -148,7 +164,7 @@ export default function Tournament() {
           console.log(`skipped game without field, time, or date: ${JSON.stringify(game)}`)
           return;
         }
-        const dt = setTimeAndDate(structuredClone(zdate), game.StartTime, game.StartDate)
+        const dt = setTimeAndDate(new Date(), game.StartTime, game.StartDate)
         const field = game.FieldName;
         const minutes = dt.getMinutes() >= 10 ? dt.getMinutes() : `0${dt.getMinutes()}`;
         const hours = dt.getHours() >= 10 ? dt.getHours() : `0${dt.getHours()}`;
@@ -159,9 +175,14 @@ export default function Tournament() {
         if (!schedule.has(field)) {
           schedule.set(field, new Map());
         }
-        // TODO: Rather than creating the game string here, pass a game object, preserving the independent fields. 
-        // Use the division field later to change formatting (background color and contrasting text color).
-        schedule.get(field).set(datetimeString, `${game.HomeTeamName}-${game.AwayTeamName} (${division})`);
+        if (schedule.get(field).get(datetimeString)) {
+          console.log(`Conflict detected: ${field} at ${datetimeString} already has a game assigned (${schedule.get(field).get(datetimeString)}). Not adding ${game.HomeTeamName}-${game.AwayTeamName}.`);
+          schedule.get(field).set(datetimeString, `CONFLICT (multiple games at this field/time)`);
+        } else {
+          // TODO: Rather than creating the game string here, pass a game object, preserving the independent fields. 
+          // Use the division field later to change formatting (background color and contrasting text color).
+          schedule.get(field).set(datetimeString, `${game.HomeTeamName}-${game.AwayTeamName} (${division})`);
+        }
       })
     };
 
@@ -171,15 +192,15 @@ export default function Tournament() {
       const matchB = b.match(re);
 
       if (matchA && matchB) {
-      const numA = parseInt(matchA[1], 10);
-      const charA = matchA[2];
-      const numB = parseInt(matchB[1], 10);
-      const charB = matchB[2];
+        const numA = parseInt(matchA[1], 10);
+        const charA = matchA[2];
+        const numB = parseInt(matchB[1], 10);
+        const charB = matchB[2];
 
-      if (numA !== numB) {
-        return numA - numB;
-      }
-      return charA.localeCompare(charB);
+        if (numA !== numB) {
+          return numA - numB;
+        }
+        return charA.localeCompare(charB);
       }
 
       // Fallback to localeCompare if regex doesn't match
@@ -189,7 +210,7 @@ export default function Tournament() {
     setSchedule(schedule);
     setDateTimes(sortedDatetimes);
     setFields(sortedFields);
-  }
+  }, [events]); // Dependency array
 
   return (
     <div className={styles.clouds}>
@@ -243,6 +264,13 @@ export default function Tournament() {
                 <option key='desc' id='desc' value={'desc'}>Descending</option>
               </select>
             </div>
+            <div className={styles.container_hor}>
+              <Image src={require('./images/users_green-4.png')} width={30}
+                height={30}
+                alt='Users Green' />
+              <label htmlFor='combineEventsInput' className={styles.label}>Combine Events</label>
+              <input value={combineEvents} onChange={handleCombineEventsChange} id='combineEventsInput' className={styles.checkbox} type='checkbox'></input>
+            </div>
           </div>
         </div>
         <div className={styles.window}>
@@ -272,8 +300,13 @@ export default function Tournament() {
             </table>
           ) : <p>No tounaments found</p>}
         </div>
-        <ScheduleTable schedule={schedule} sortedDatetimes={sortedDatetimes} sortedFields={sortedFields} />
+        <ScheduleTable schedule={schedule} sortedDatetimes={sortedDatetimes} sortedFields={sortedFields} eventNames={getEventNames()} />
         <CapsTable sortedDatetimes={sortedDatetimes} />
+        <div>
+          <Image src={require('./images/clippy.gif')} width={200}
+            height='auto' className={styles.clippy}
+            alt='Clippy' />
+        </div>
       </main>
     </div>
   )

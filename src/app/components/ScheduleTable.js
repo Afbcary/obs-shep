@@ -1,7 +1,7 @@
 import tstyles from './ScheduleTable.module.css';
 import styles from './Tournament.module.css';
 
-export default function ScheduleTable({ schedule, sortedDatetimes, sortedFields }) {
+export default function ScheduleTable({ schedule, sortedDatetimes, sortedFields, eventNames }) {
 
   const handleCopy = () => {
     const header = ['Field', ...sortedDatetimes].join('\t');
@@ -24,6 +24,7 @@ export default function ScheduleTable({ schedule, sortedDatetimes, sortedFields 
       {event ? <div className={styles.window}>
         <h2 className={styles.instruction}>Games Table</h2>
         <div className={styles.margin}>
+          <p>{eventNames}</p>
           <button onClick={handleCopy} className={styles.button + ' ' + tstyles.button}>
             Copy Table to Clipboard
           </button>
