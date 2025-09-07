@@ -25,7 +25,7 @@ export default function Tournament() {
   const [sortStartDate, setSortStartDate] = useState('asc');
 
   function handleYearChange(e) {
-    setYear(e.target.value);
+    setYear(Number(e.target.value));
   }
   function handleStateChange(e) {
     setState(e.target.value);
@@ -104,12 +104,6 @@ export default function Tournament() {
     return zdate;
   }
 
-  // TODO: use ultirzr API differently to get future events only 
-  function isInPast(event) {
-    const endDateTime = new Date(event.EndDate);
-    return endDateTime < new Date();
-  }
-
   function generateSchedule(event) {
     // division: [games]
     let allGames = new Map();
@@ -155,7 +149,6 @@ export default function Tournament() {
           return;
         }
         const dt = setTimeAndDate(structuredClone(zdate), game.StartTime, game.StartDate)
-        // const field = game.FieldName.replace(/[^0-9]+/g, '');
         const field = game.FieldName;
         const minutes = dt.getMinutes() >= 10 ? dt.getMinutes() : `0${dt.getMinutes()}`;
         const hours = dt.getHours() >= 10 ? dt.getHours() : `0${dt.getHours()}`;

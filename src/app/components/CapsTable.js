@@ -11,13 +11,13 @@ export default function CapsTable({ sortedDatetimes }) {
     const [hardCap, setHard] = useState(105);
 
     function handleHalfCapChange(e) {
-        setHalf(e.target.value);
+        setHalf(Number(e.target.value));
     }
     function handleSoftCapChange(e) {
-        setSoft(e.target.value);
+        setSoft(Number(e.target.value));
     }
     function handleHardCapChange(e) {
-        setHard(e.target.value);
+        setHard(Number(e.target.value));
     }
 
     function handleCopy() {
@@ -37,7 +37,6 @@ export default function CapsTable({ sortedDatetimes }) {
         navigator.clipboard.writeText(tsvData);
     }
 
-    // TODO: Also add maximum and minimum values for caps.
     function getCapTime(cap, datetime) {
         var capTime;
         switch (cap) {
@@ -53,17 +52,17 @@ export default function CapsTable({ sortedDatetimes }) {
             default:
                 capTime = 0;
         }
-
+        
         const timeMatch = datetime.match(/:\s*(.*)/);
         if (!timeMatch) {
             return 'Error';
         }
-        const timeString = timeMatch[1]; // e.g., "13:30"
+        const timeString = timeMatch[1];
 
         const date = new Date(`1/1/2000 ${timeString}`);
         if (isNaN(date)) {
             return 'Error';
-        }
+        };
 
         date.setMinutes(date.getMinutes() + capTime);
 
