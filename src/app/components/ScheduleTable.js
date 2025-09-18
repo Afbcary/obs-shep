@@ -45,7 +45,7 @@ export default function ScheduleTable({ schedule, sortedDatetimes, sortedFields,
                         return (
                         <td key={dt} className={styles.td}>
                           {game?.title || ''}
-                          {game ? <strong className={tstyles[game?.division]}> ({game?.division})</strong> : <></>}
+                          {game?.title ? <strong className={tstyles[game?.division]}> ({game?.division})</strong> : <></>}
                         </td>
                         );
                     })}
