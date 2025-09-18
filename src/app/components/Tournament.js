@@ -179,9 +179,9 @@ export default function Tournament() {
           console.log(`Conflict detected: ${field} at ${datetimeString} already has a game assigned (${schedule.get(field).get(datetimeString)}). Not adding ${game.HomeTeamName}-${game.AwayTeamName}.`);
           schedule.get(field).set(datetimeString, `CONFLICT (multiple games at this field/time)`);
         } else {
-          // TODO: Rather than creating the game string here, pass a game object, preserving the independent fields. 
-          // Use the division field later to change formatting (background color and contrasting text color).
-          schedule.get(field).set(datetimeString, `${game.HomeTeamName}-${game.AwayTeamName} (${division})`);
+          game.division = division;
+          game.title = `${game.HomeTeamName}-${game.AwayTeamName}`;
+          schedule.get(field).set(datetimeString, game);
         }
       })
     };

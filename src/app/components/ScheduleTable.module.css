@@ -4,6 +4,67 @@
   margin: 1rem 1rem 1rem 0;
 }
 
+.YCC17-G {
+  color: hsl(308, 100%, 80%);
+}
+.YCC17-B {
+  color: hsl(221, 100%, 80%);
+}
+.YCC17-X {
+  color: hsl(120, 100%, 80%);
+}
+.YCC20-G {
+  color: hsl(308, 100%, 70%);
+}
+.YCC20-B {
+  color: hsl(221, 100%, 70%);
+}
+.YCC20-X {
+  color: hsl(120, 100%, 70%);
+}
+.C-W {
+  color: hsl(308, 100%, 65%);
+}
+.C-M {
+  color: hsl(221, 100%, 65%);
+}
+.W {
+  color: hsl(308, 100%, 60%);
+}
+.M {
+  color: hsl(221, 100%, 60%);
+}
+.X {
+  color: hsl(120, 100%, 60%);
+}
+.M-W {
+  color: hsl(308, 100%, 40%);
+}
+.M-M {
+  color: hsl(221, 100%, 40%);
+}
+.M-X {
+  color: hsl(120, 100%, 40%);
+}
+.GM-W {
+  color: hsl(308, 100%, 30%);
+}
+.GM-M {
+  color: hsl(221, 100%, 30%);
+}
+.GM-X {
+  color: hsl(120, 100%, 30%);
+}
+.GGM-W {
+  color: hsl(308, 100%, 20%);
+}
+.GGM-M {
+  color: hsl(221, 100%, 20%);
+}
+.GGM-X {
+  color: hsl(120, 100%, 20%);
+}
+
 @media (width >= 40rem) { 
   .button {
     margin: 0.5rem 0.5rem 0.5rem 0;

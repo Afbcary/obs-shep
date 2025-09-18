@@ -7,7 +7,7 @@ export default function ScheduleTable({ schedule, sortedDatetimes, sortedFields,
     const header = ['Field', ...sortedDatetimes].join('\t');
 
     const rows = sortedFields.map(field => {
-      const rowData = sortedDatetimes.map(dt => schedule.get(field)?.get(dt) || '');
+      const rowData = sortedDatetimes.map(dt => schedule.get(field)?.get(dt)?.title || '');
       return [field, ...rowData].join('\t');
     });
 
@@ -21,7 +21,7 @@ export default function ScheduleTable({ schedule, sortedDatetimes, sortedFields,
 
   return (
     <div>
-      {event ? <div className={styles.window}>
+      {schedule ? <div className={styles.window}>
         <h2 className={styles.instruction}>Games Table</h2>
         <div className={styles.margin}>
           <p>{eventNames}</p>
@@ -41,12 +41,13 @@ export default function ScheduleTable({ schedule, sortedDatetimes, sortedFields,
                   <tr key={field}>
                     <th scope='row'>{field}</th>
                     {sortedDatetimes.map(dt => {
-                      const game = schedule.get(field)?.get(dt) || '';
-                      return (
+                      const game = schedule.get(field)?.get(dt);
+                        return (
                         <td key={dt} className={styles.td}>
-                          {game}
+                          {game?.title || ''}
+                          {game ? <strong className={tstyles[game?.division]}> ({game?.division})</strong> : <></>}
                         </td>
-                      );
+                        );
                     })}
                   </tr>
                 ))}
