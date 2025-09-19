@@ -7,7 +7,15 @@ export default function ScheduleTable({ schedule, sortedDatetimes, sortedFields,
     const header = ['Field', ...sortedDatetimes].join('\t');
 
     const rows = sortedFields.map(field => {
-      const rowData = sortedDatetimes.map(dt => schedule.get(field)?.get(dt)?.title + ` (${division})` || '');
+      var rowData = [];
+      for (let dt of sortedDatetimes) {
+        const game = schedule.get(field)?.get(dt);
+        if (game?.title) {
+          rowData.push(`${game.title} (${game.division})`);
+        } else {
+          rowData.push('');
+        }
+      }
       return [field, ...rowData].join('\t');
     });
 
