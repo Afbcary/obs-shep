@@ -119,7 +119,30 @@ export default function Tournament() {
     return zdate;
   }
 
-  useEffect(() => {
+  function sortFields(uniqueFields) {
+    return [...uniqueFields].sort((a, b) => {
+      const re = /(\d+)([a-zA-Z]*)/;
+      const matchA = a.match(re);
+      const matchB = b.match(re);
+
+      if (matchA && matchB) {
+        const numA = parseInt(matchA[1], 10);
+        const charA = matchA[2];
+        const numB = parseInt(matchB[1], 10);
+        const charB = matchB[2];
+
+        if (numA !== numB) {
+          return numA - numB;
+        }
+        return charA.localeCompare(charB);
+      }
+
+      // Fallback to localeCompare if regex doesn't match
+      return a.localeCompare(b);
+    });
+  }
+
+  function mapGamesToDivisions(events) {
     // division: [games]
     let allGames = new Map();
     for (const event of events) {
@@ -154,62 +177,48 @@ export default function Tournament() {
         });
       });
     };
+    return allGames;
+  }
+
+  useEffect(() => {
+    let allGames = mapGamesToDivisions(events)
 
     const schedule = new Map(); // {fieldName: {datetimeString: gameString}}
     const uniqueDatetimes = new Set();
     const uniqueFields = new Set();
-    for (const [division, games] of allGames.entries()) {
-      games.forEach(game => {
-        if (!game.FieldName || !game.StartTime || !game.StartDate) {
-          console.log(`skipped game without field, time, or date: ${JSON.stringify(game)}`)
-          return;
-        }
-        const dt = setTimeAndDate(new Date(), game.StartTime, game.StartDate)
-        const field = game.FieldName;
-        const minutes = dt.getMinutes() >= 10 ? dt.getMinutes() : `0${dt.getMinutes()}`;
-        const hours = dt.getHours() >= 10 ? dt.getHours() : `0${dt.getHours()}`;
-        const datetimeString = `${dt.getMonth() + 1}/${dt.getDate()}: ${hours}:${minutes}`;
-        uniqueFields.add(field);
-        uniqueDatetimes.add(datetimeString);
+    if (allGames && allGames.size > 0) {
+      for (const [division, games] of allGames.entries()) {
+        games.forEach(game => {
+          if (!game.FieldName || !game.StartTime || !game.StartDate) {
+            console.log(`skipped game without field, time, or date: ${JSON.stringify(game)}`)
+            return;
+          }
+          const dt = setTimeAndDate(new Date(), game.StartTime, game.StartDate)
+          const field = game.FieldName;
+          const minutes = dt.getMinutes() >= 10 ? dt.getMinutes() : `0${dt.getMinutes()}`;
+          const hours = dt.getHours() >= 10 ? dt.getHours() : `0${dt.getHours()}`;
+          const datetimeString = `${dt.getMonth() + 1}/${dt.getDate()}: ${hours}:${minutes}`;
+          uniqueFields.add(field);
+          uniqueDatetimes.add(datetimeString);
 
-        if (!schedule.has(field)) {
-          schedule.set(field, new Map());
-        }
-        if (schedule.get(field).get(datetimeString)) {
-          console.log(`Conflict detected: ${field} at ${datetimeString} already has a game assigned (${schedule.get(field).get(datetimeString)}). Not adding ${game.HomeTeamName}-${game.AwayTeamName}.`);
-          schedule.get(field).set(datetimeString, `CONFLICT (multiple games at this field/time)`);
-        } else {
-          game.division = division;
-          game.title = `${game.HomeTeamName}-${game.AwayTeamName}`;
-          schedule.get(field).set(datetimeString, game);
-        }
-      })
-    };
+          if (!schedule.has(field)) {
+            schedule.set(field, new Map());
+          }
+          if (schedule.get(field).get(datetimeString)) {
+            console.log(`Conflict detected: ${field} at ${datetimeString} already has a game assigned (${schedule.get(field).get(datetimeString)}). Not adding ${game.HomeTeamName}-${game.AwayTeamName}.`);
+            schedule.get(field).set(datetimeString, `CONFLICT (multiple games at this field/time)`);
+          } else {
+            game.division = division;
+            game.title = `${game.HomeTeamName}-${game.AwayTeamName}`;
+            schedule.get(field).set(datetimeString, game);
+          }
+        })
+      };
+  }
 
-    const sortedFields = [...uniqueFields].sort((a, b) => {
-      const re = /(\d+)([a-zA-Z]*)/;
-      const matchA = a.match(re);
-      const matchB = b.match(re);
-
-      if (matchA && matchB) {
-        const numA = parseInt(matchA[1], 10);
-        const charA = matchA[2];
-        const numB = parseInt(matchB[1], 10);
-        const charB = matchB[2];
-
-        if (numA !== numB) {
-          return numA - numB;
-        }
-        return charA.localeCompare(charB);
-      }
-
-      // Fallback to localeCompare if regex doesn't match
-      return a.localeCompare(b);
-    });
-    const sortedDatetimes = [...uniqueDatetimes].sort();
     setSchedule(schedule);
-    setDateTimes(sortedDatetimes);
-    setFields(sortedFields);
+    setDateTimes([...uniqueDatetimes].sort());
+    setFields(sortFields(uniqueFields));
   }, [events]); // Dependency array
 
   return (
@@ -236,7 +245,6 @@ export default function Tournament() {
                 alt='Windows World' />
               <label htmlFor='stateInput' className={styles.label}>State</label>
               <select value={state} onChange={handleStateChange} id='stateInput' className={styles.input}>
-                <option defaultValue={true} key='allStates' id='allStates' value={null}>All States</option>
                 {stateOptions()}
               </select>
             </div>
@@ -275,7 +283,7 @@ export default function Tournament() {
         </div>
         <div className={styles.window}>
           <p className={styles.instruction}>Select a single event</p>
-          {tournaments ? (
+          {tournaments && tournaments.length > 0 ? (
             <table className={styles.margin}>
               <thead>
                 <tr>
