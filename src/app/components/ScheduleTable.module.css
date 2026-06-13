@@ -28,6 +28,24 @@
 .C-M {
   color: hsl(221, 100%, 65%);
 }
+.C-DI-W {
+  color: hsl(325, 100%, 65%);
+}
+.C-DI-M {
+  color: hsl(210, 100%, 65%);
+}
+.C-DIII-W {
+  color: hsl(285, 100%, 65%);
+}
+.C-DIII-M {
+  color: hsl(235, 100%, 65%);
+}
+.C-Dev-W {
+  color: hsl(345, 100%, 65%);
+}
+.C-Dev-M {
+  color: hsl(190, 100%, 65%);
+}
 .W {
   color: hsl(308, 100%, 60%);
 }

@@ -25,6 +25,14 @@ export const divisionAbbreviations = {
     // College
     'College - Women': 'C-W',
     'College - Men': 'C-M',
+    'College - D-I - Women': 'C-DI-W',
+    'College - D-I - Men': 'C-DI-M',
+    'College - D-III - Women': 'C-DIII-W',
+    'College - D-III - Men': 'C-DIII-M',
+    'College - dev - Women': 'C-Dev-W',
+    'College - dev - Men': 'C-Dev-M',
+    'College - Dev - Women': 'C-Dev-W',
+    'College - Dev - Men': 'C-Dev-M',
     // Club prime
     'Club - Women': 'W',
     'Club - Men': 'M',
