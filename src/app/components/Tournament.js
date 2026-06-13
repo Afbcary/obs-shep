@@ -147,8 +147,19 @@ export default function Tournament() {
     let allGames = new Map();
     for (const event of events) {
       event.EventGroups.forEach(group => {
-        // EventGroupName: "College - Men "
-        const division = getDivision(group.EventGroupName.trim());
+        let groupName = group.EventGroupName.trim();
+        if (groupName.startsWith("College -")) {
+          const gender = groupName.replace("College - ", "").trim();
+          const eventName = event.EventName || "";
+          if (eventName.includes("D-III") || eventName.includes("D - III")) {
+            groupName = `College - D-III - ${gender}`;
+          } else if (eventName.includes("D-I") || eventName.includes("D - I")) {
+            groupName = `College - D-I - ${gender}`;
+          } else if (eventName.toLowerCase().includes("dev") || eventName.toLowerCase().includes("developmental")) {
+            groupName = `College - Dev - ${gender}`;
+          }
+        }
+        const division = getDivision(groupName);
         if (!allGames.has(division)) {
           allGames.set(division, []);
         }
@@ -214,7 +225,7 @@ export default function Tournament() {
           }
         })
       };
-  }
+    }
 
     setSchedule(schedule);
     setDateTimes([...uniqueDatetimes].sort());
