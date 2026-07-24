@@ -1,0 +1,1605 @@
+{
+  "success": true,
+  "hits": [
+    {
+      "EventName": "Filling the Void 2026",
+      "EventLogo": "/assets/1/15/EventLogoDimension/d82e308bae9f42fd9d79f8a4eb81998d1.png",
+      "City": "Hickory",
+      "StartDate": "2026-07-18T00:00:00.000Z",
+      "EndDate": "2026-07-19T00:00:00.000Z",
+      "State": "NC",
+      "EventTypeName": "Sanctioned Club Regular Season Tournament",
+      "EventType": "Tournament",
+      "EventGroups": [
+        {
+          "EventRounds": [
+            {
+              "RoundId": 848272357,
+              "Pools": [
+                {
+                  "Name": "Pool A",
+                  "PoolId": 574959850,
+                  "Games": [
+                    {
+                      "EventGameId": 456912048,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "10:00 AM",
+                      "FieldName": "Field 2",
+                      "HomeTeamId": 181702285,
+                      "AwayTeamId": 689136246,
+                      "HomeTeamName": "WOMP (1)",
+                      "AwayTeamName": "Space Cowboys (9)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "6",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=ZEQ%2fYO8eC%2bOTaS3Fay6MOu8ieh8rCsHj2Aj%2bp%2fVkDu8%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=xNcpHBSk%2b4E%2fX0G7e%2fgSMNpdyfcUonN83jDDYfVwwcI%3d"
+                    },
+                    {
+                      "EventGameId": 504471941,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "10:00 AM",
+                      "FieldName": "Field 3",
+                      "HomeTeamId": 29193325,
+                      "AwayTeamId": 725783904,
+                      "HomeTeamName": "Charleston Heat Stroke (8)",
+                      "AwayTeamName": "Savannah Wild (16)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "5",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=apF0wgibh4g1kLueSjmjn%2bEJzUWxEEiQvvp4EMtm%2bLo%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=bK5bneOHIw%2b2NBUiY0pH3ChMngXWmiZdqJCLR3j7Qj8%3d"
+                    },
+                    {
+                      "EventGameId": 983003328,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "12:00 PM",
+                      "FieldName": "Field 2",
+                      "HomeTeamId": 181702285,
+                      "AwayTeamId": 725783904,
+                      "HomeTeamName": "WOMP (1)",
+                      "AwayTeamName": "Savannah Wild (16)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "3",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=ZEQ%2fYO8eC%2bOTaS3Fay6MOu8ieh8rCsHj2Aj%2bp%2fVkDu8%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=bK5bneOHIw%2b2NBUiY0pH3ChMngXWmiZdqJCLR3j7Qj8%3d"
+                    },
+                    {
+                      "EventGameId": 377304759,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "12:00 PM",
+                      "FieldName": "Field 3",
+                      "HomeTeamId": 29193325,
+                      "AwayTeamId": 689136246,
+                      "HomeTeamName": "Charleston Heat Stroke (8)",
+                      "AwayTeamName": "Space Cowboys (9)",
+                      "HomeTeamScore": "9",
+                      "AwayTeamScore": "7",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=apF0wgibh4g1kLueSjmjn%2bEJzUWxEEiQvvp4EMtm%2bLo%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=xNcpHBSk%2b4E%2fX0G7e%2fgSMNpdyfcUonN83jDDYfVwwcI%3d"
+                    },
+                    {
+                      "EventGameId": 41332086,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "2:00 PM",
+                      "FieldName": "Field 2",
+                      "HomeTeamId": 181702285,
+                      "AwayTeamId": 29193325,
+                      "HomeTeamName": "WOMP (1)",
+                      "AwayTeamName": "Charleston Heat Stroke (8)",
+                      "HomeTeamScore": "12",
+                      "AwayTeamScore": "9",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=ZEQ%2fYO8eC%2bOTaS3Fay6MOu8ieh8rCsHj2Aj%2bp%2fVkDu8%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=apF0wgibh4g1kLueSjmjn%2bEJzUWxEEiQvvp4EMtm%2bLo%3d"
+                    },
+                    {
+                      "EventGameId": 550261037,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "2:00 PM",
+                      "FieldName": "Field 3",
+                      "HomeTeamId": 689136246,
+                      "AwayTeamId": 725783904,
+                      "HomeTeamName": "Space Cowboys (9)",
+                      "AwayTeamName": "Savannah Wild (16)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "7",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=xNcpHBSk%2b4E%2fX0G7e%2fgSMNpdyfcUonN83jDDYfVwwcI%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=bK5bneOHIw%2b2NBUiY0pH3ChMngXWmiZdqJCLR3j7Qj8%3d"
+                    }
+                  ],
+                  "Standings": [
+                    {
+                      "GoalsFor": 38,
+                      "GoalsAgainst": 18,
+                      "GoalDifferential": 20,
+                      "TeamName": "WOMP (1)",
+                      "Ties": 0,
+                      "TieBreaker": "",
+                      "Wins": 3,
+                      "Losses": 0,
+                      "SortOrder": 2
+                    },
+                    {
+                      "GoalsFor": 31,
+                      "GoalsAgainst": 24,
+                      "GoalDifferential": 7,
+                      "TeamName": "Charleston Heat Stroke (8)",
+                      "Ties": 0,
+                      "TieBreaker": "",
+                      "Wins": 2,
+                      "Losses": 1,
+                      "SortOrder": 3
+                    },
+                    {
+                      "GoalsFor": 26,
+                      "GoalsAgainst": 29,
+                      "GoalDifferential": -3,
+                      "TeamName": "Space Cowboys (9)",
+                      "Ties": 0,
+                      "TieBreaker": "",
+                      "Wins": 1,
+                      "Losses": 2,
+                      "SortOrder": 4
+                    },
+                    {
+                      "GoalsFor": 15,
+                      "GoalsAgainst": 39,
+                      "GoalDifferential": -24,
+                      "TeamName": "Savannah Wild (16)",
+                      "Ties": 0,
+                      "TieBreaker": "",
+                      "Wins": 0,
+                      "Losses": 3,
+                      "SortOrder": 5
+                    }
+                  ]
+                },
+                {
+                  "Name": "Pool B",
+                  "PoolId": 774601878,
+                  "Games": [
+                    {
+                      "EventGameId": 805847714,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "8:15 AM",
+                      "FieldName": "Field 4A",
+                      "HomeTeamId": 178331147,
+                      "AwayTeamId": 441516491,
+                      "HomeTeamName": "Crypt (2)",
+                      "AwayTeamName": "Tennessee Folklore (10)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "4",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=cJAXs7jhiVR8x6wyVOCTBi5ymLoAC5RiEs452xU5q%2bY%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=RLU2OJZtSPnaTvk6t8DG8cwoC2T1sCJG12ufO%2fVn138%3d"
+                    },
+                    {
+                      "EventGameId": 19277937,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "8:15 AM",
+                      "FieldName": "Field 4B",
+                      "HomeTeamId": 111683817,
+                      "AwayTeamId": 693640096,
+                      "HomeTeamName": "Queen City Kings (7)",
+                      "AwayTeamName": "Gambit (15)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "3",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=rvb5cASItBScSNGE5cj4uEx3da9k84H5sB9ushAxydA%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=dvpw%2fXGI9rE5aaGAdJRF41n0B4Lu%2fu6ubdDsJyIUKAw%3d"
+                    },
+                    {
+                      "EventGameId": 472417437,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "10:00 AM",
+                      "FieldName": "Field 4A",
+                      "HomeTeamId": 178331147,
+                      "AwayTeamId": 693640096,
+                      "HomeTeamName": "Crypt (2)",
+                      "AwayTeamName": "Gambit (15)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "10",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=cJAXs7jhiVR8x6wyVOCTBi5ymLoAC5RiEs452xU5q%2bY%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=dvpw%2fXGI9rE5aaGAdJRF41n0B4Lu%2fu6ubdDsJyIUKAw%3d"
+                    },
+                    {
+                      "EventGameId": 484550714,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "10:00 AM",
+                      "FieldName": "Field 4B",
+                      "HomeTeamId": 111683817,
+                      "AwayTeamId": 441516491,
+                      "HomeTeamName": "Queen City Kings (7)",
+                      "AwayTeamName": "Tennessee Folklore (10)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "8",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=rvb5cASItBScSNGE5cj4uEx3da9k84H5sB9ushAxydA%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=RLU2OJZtSPnaTvk6t8DG8cwoC2T1sCJG12ufO%2fVn138%3d"
+                    },
+                    {
+                      "EventGameId": 372613782,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "12:00 PM",
+                      "FieldName": "Field 4A",
+                      "HomeTeamId": 178331147,
+                      "AwayTeamId": 111683817,
+                      "HomeTeamName": "Crypt (2)",
+                      "AwayTeamName": "Queen City Kings (7)",
+                      "HomeTeamScore": "12",
+                      "AwayTeamScore": "8",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=cJAXs7jhiVR8x6wyVOCTBi5ymLoAC5RiEs452xU5q%2bY%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=rvb5cASItBScSNGE5cj4uEx3da9k84H5sB9ushAxydA%3d"
+                    },
+                    {
+                      "EventGameId": 105939000,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "12:00 PM",
+                      "FieldName": "Field 4B",
+                      "HomeTeamId": 441516491,
+                      "AwayTeamId": 693640096,
+                      "HomeTeamName": "Tennessee Folklore (10)",
+                      "AwayTeamName": "Gambit (15)",
+                      "HomeTeamScore": "8",
+                      "AwayTeamScore": "11",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=RLU2OJZtSPnaTvk6t8DG8cwoC2T1sCJG12ufO%2fVn138%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=dvpw%2fXGI9rE5aaGAdJRF41n0B4Lu%2fu6ubdDsJyIUKAw%3d"
+                    }
+                  ],
+                  "Standings": [
+                    {
+                      "GoalsFor": 38,
+                      "GoalsAgainst": 22,
+                      "GoalDifferential": 16,
+                      "TeamName": "Crypt (2)",
+                      "Ties": 0,
+                      "TieBreaker": "",
+                      "Wins": 3,
+                      "Losses": 0,
+                      "SortOrder": 2
+                    },
+                    {
+                      "GoalsFor": 34,
+                      "GoalsAgainst": 23,
+                      "GoalDifferential": 11,
+                      "TeamName": "Queen City Kings (7)",
+                      "Ties": 0,
+                      "TieBreaker": "",
+                      "Wins": 2,
+                      "Losses": 1,
+                      "SortOrder": 3
+                    },
+                    {
+                      "GoalsFor": 24,
+                      "GoalsAgainst": 34,
+                      "GoalDifferential": -10,
+                      "TeamName": "Gambit (15)",
+                      "Ties": 0,
+                      "TieBreaker": "",
+                      "Wins": 1,
+                      "Losses": 2,
+                      "SortOrder": 4
+                    },
+                    {
+                      "GoalsFor": 20,
+                      "GoalsAgainst": 37,
+                      "GoalDifferential": -17,
+                      "TeamName": "Tennessee Folklore (10)",
+                      "Ties": 0,
+                      "TieBreaker": "",
+                      "Wins": 0,
+                      "Losses": 3,
+                      "SortOrder": 5
+                    }
+                  ]
+                },
+                {
+                  "Name": "Pool C",
+                  "PoolId": 942621217,
+                  "Games": [
+                    {
+                      "EventGameId": 675126253,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "8:15 AM",
+                      "FieldName": "Field 2",
+                      "HomeTeamId": 675816037,
+                      "AwayTeamId": 259377159,
+                      "HomeTeamName": "Triumph (3)",
+                      "AwayTeamName": "Hydra (11)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "3",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=RuRK%2b7%2bNQEz3YCsrkMQ0MRebfG29pHFpa1Rf%2fy1Hi%2bQ%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=q%2bP8AGVmiGgiCZu4m08CkoiMkUcxqlbeSRfeRjjZmeI%3d"
+                    },
+                    {
+                      "EventGameId": 383449093,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "8:15 AM",
+                      "FieldName": "Field 3",
+                      "HomeTeamId": 594746380,
+                      "AwayTeamId": 310598607,
+                      "HomeTeamName": "Psychedelic (6)",
+                      "AwayTeamName": "ElecTriCity (14)",
+                      "HomeTeamScore": "12",
+                      "AwayTeamScore": "13",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=woHpkuthkWjJ4IntQC%2fOJt4og8ZIA1tCO%2f38F2RxlwA%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=8DXVsegbAcsfV1bWy2qDI7np8S1X5gdBYUxKIUkABcY%3d"
+                    },
+                    {
+                      "EventGameId": 41009939,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "12:00 PM",
+                      "FieldName": "Field 5A",
+                      "HomeTeamId": 675816037,
+                      "AwayTeamId": 310598607,
+                      "HomeTeamName": "Triumph (3)",
+                      "AwayTeamName": "ElecTriCity (14)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "8",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=RuRK%2b7%2bNQEz3YCsrkMQ0MRebfG29pHFpa1Rf%2fy1Hi%2bQ%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=8DXVsegbAcsfV1bWy2qDI7np8S1X5gdBYUxKIUkABcY%3d"
+                    },
+                    {
+                      "EventGameId": 374309576,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "12:00 PM",
+                      "FieldName": "Field 5B",
+                      "HomeTeamId": 594746380,
+                      "AwayTeamId": 259377159,
+                      "HomeTeamName": "Psychedelic (6)",
+                      "AwayTeamName": "Hydra (11)",
+                      "HomeTeamScore": "12",
+                      "AwayTeamScore": "8",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=woHpkuthkWjJ4IntQC%2fOJt4og8ZIA1tCO%2f38F2RxlwA%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=q%2bP8AGVmiGgiCZu4m08CkoiMkUcxqlbeSRfeRjjZmeI%3d"
+                    },
+                    {
+                      "EventGameId": 644574658,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "2:00 PM",
+                      "FieldName": "Field 5A",
+                      "HomeTeamId": 675816037,
+                      "AwayTeamId": 594746380,
+                      "HomeTeamName": "Triumph (3)",
+                      "AwayTeamName": "Psychedelic (6)",
+                      "HomeTeamScore": "12",
+                      "AwayTeamScore": "11",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=RuRK%2b7%2bNQEz3YCsrkMQ0MRebfG29pHFpa1Rf%2fy1Hi%2bQ%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=woHpkuthkWjJ4IntQC%2fOJt4og8ZIA1tCO%2f38F2RxlwA%3d"
+                    },
+                    {
+                      "EventGameId": 885377501,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "2:00 PM",
+                      "FieldName": "Field 5B",
+                      "HomeTeamId": 259377159,
+                      "AwayTeamId": 310598607,
+                      "HomeTeamName": "Hydra (11)",
+                      "AwayTeamName": "ElecTriCity (14)",
+                      "HomeTeamScore": "8",
+                      "AwayTeamScore": "13",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=q%2bP8AGVmiGgiCZu4m08CkoiMkUcxqlbeSRfeRjjZmeI%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=8DXVsegbAcsfV1bWy2qDI7np8S1X5gdBYUxKIUkABcY%3d"
+                    }
+                  ],
+                  "Standings": [
+                    {
+                      "GoalsFor": 38,
+                      "GoalsAgainst": 22,
+                      "GoalDifferential": 16,
+                      "TeamName": "Triumph (3)",
+                      "Ties": 0,
+                      "TieBreaker": "",
+                      "Wins": 3,
+                      "Losses": 0,
+                      "SortOrder": 2
+                    },
+                    {
+                      "GoalsFor": 34,
+                      "GoalsAgainst": 33,
+                      "GoalDifferential": 1,
+                      "TeamName": "ElecTriCity (14)",
+                      "Ties": 0,
+                      "TieBreaker": "",
+                      "Wins": 2,
+                      "Losses": 1,
+                      "SortOrder": 3
+                    },
+                    {
+                      "GoalsFor": 35,
+                      "GoalsAgainst": 33,
+                      "GoalDifferential": 2,
+                      "TeamName": "Psychedelic (6)",
+                      "Ties": 0,
+                      "TieBreaker": "",
+                      "Wins": 1,
+                      "Losses": 2,
+                      "SortOrder": 4
+                    },
+                    {
+                      "GoalsFor": 19,
+                      "GoalsAgainst": 38,
+                      "GoalDifferential": -19,
+                      "TeamName": "Hydra (11)",
+                      "Ties": 0,
+                      "TieBreaker": "",
+                      "Wins": 0,
+                      "Losses": 3,
+                      "SortOrder": 5
+                    }
+                  ]
+                },
+                {
+                  "Name": "Pool D",
+                  "PoolId": 808661472,
+                  "Games": [
+                    {
+                      "EventGameId": 959405582,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "8:15 AM",
+                      "FieldName": "Field 9A",
+                      "HomeTeamId": 45697534,
+                      "AwayTeamId": 397956438,
+                      "HomeTeamName": "Atlanta Arson (4)",
+                      "AwayTeamName": "NC Brickhouse (12)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "3",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=%2bqqUv6iJMZHTMJcQmo2cDRTKtPWbuFIXcxUXFs61Sco%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=kv8vtId7HTXZxnAegIUox9lCf5NtH0TVnG6VZ5a3rN8%3d"
+                    },
+                    {
+                      "EventGameId": 885835554,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "8:15 AM",
+                      "FieldName": "Field 9B",
+                      "HomeTeamId": 732670973,
+                      "AwayTeamId": 333233262,
+                      "HomeTeamName": "Black Lung (5)",
+                      "AwayTeamName": "Atlanta Outlaws (13)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "8",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=giBcSs%2bu%2fd5CdmoqDKvc6y9qQZ37O94h3Y9OwT%2bqyHY%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=1V1r9BRhauFkH3Pwk2pLrtFfPHX0L%2bsd1FilEK8gBFQ%3d"
+                    },
+                    {
+                      "EventGameId": 356454527,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "10:00 AM",
+                      "FieldName": "Field 9A",
+                      "HomeTeamId": 45697534,
+                      "AwayTeamId": 333233262,
+                      "HomeTeamName": "Atlanta Arson (4)",
+                      "AwayTeamName": "Atlanta Outlaws (13)",
+                      "HomeTeamScore": "7",
+                      "AwayTeamScore": "10",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=%2bqqUv6iJMZHTMJcQmo2cDRTKtPWbuFIXcxUXFs61Sco%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=1V1r9BRhauFkH3Pwk2pLrtFfPHX0L%2bsd1FilEK8gBFQ%3d"
+                    },
+                    {
+                      "EventGameId": 346908197,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "10:00 AM",
+                      "FieldName": "Field 9B",
+                      "HomeTeamId": 732670973,
+                      "AwayTeamId": 397956438,
+                      "HomeTeamName": "Black Lung (5)",
+                      "AwayTeamName": "NC Brickhouse (12)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "1",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=giBcSs%2bu%2fd5CdmoqDKvc6y9qQZ37O94h3Y9OwT%2bqyHY%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=kv8vtId7HTXZxnAegIUox9lCf5NtH0TVnG6VZ5a3rN8%3d"
+                    },
+                    {
+                      "EventGameId": 952554548,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "2:00 PM",
+                      "FieldName": "Field 4A",
+                      "HomeTeamId": 45697534,
+                      "AwayTeamId": 732670973,
+                      "HomeTeamName": "Atlanta Arson (4)",
+                      "AwayTeamName": "Black Lung (5)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "8",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=%2bqqUv6iJMZHTMJcQmo2cDRTKtPWbuFIXcxUXFs61Sco%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=giBcSs%2bu%2fd5CdmoqDKvc6y9qQZ37O94h3Y9OwT%2bqyHY%3d"
+                    },
+                    {
+                      "EventGameId": 531593513,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "2:00 PM",
+                      "FieldName": "Field 4B",
+                      "HomeTeamId": 397956438,
+                      "AwayTeamId": 333233262,
+                      "HomeTeamName": "NC Brickhouse (12)",
+                      "AwayTeamName": "Atlanta Outlaws (13)",
+                      "HomeTeamScore": "6",
+                      "AwayTeamScore": "13",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=kv8vtId7HTXZxnAegIUox9lCf5NtH0TVnG6VZ5a3rN8%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=1V1r9BRhauFkH3Pwk2pLrtFfPHX0L%2bsd1FilEK8gBFQ%3d"
+                    }
+                  ],
+                  "Standings": [
+                    {
+                      "GoalsFor": 33,
+                      "GoalsAgainst": 21,
+                      "GoalDifferential": 12,
+                      "TeamName": "Atlanta Arson (4)",
+                      "Ties": 1,
+                      "TieBreaker": "",
+                      "Wins": 2,
+                      "Losses": 1,
+                      "SortOrder": 2
+                    },
+                    {
+                      "GoalsFor": 34,
+                      "GoalsAgainst": 22,
+                      "GoalDifferential": 12,
+                      "TeamName": "Black Lung (5)",
+                      "Ties": 1,
+                      "TieBreaker": "",
+                      "Wins": 2,
+                      "Losses": 1,
+                      "SortOrder": 3
+                    },
+                    {
+                      "GoalsFor": 31,
+                      "GoalsAgainst": 26,
+                      "GoalDifferential": 5,
+                      "TeamName": "Atlanta Outlaws (13)",
+                      "Ties": 1,
+                      "TieBreaker": "",
+                      "Wins": 2,
+                      "Losses": 1,
+                      "SortOrder": 4
+                    },
+                    {
+                      "GoalsFor": 10,
+                      "GoalsAgainst": 39,
+                      "GoalDifferential": -29,
+                      "TeamName": "NC Brickhouse (12)",
+                      "Ties": 0,
+                      "TieBreaker": "",
+                      "Wins": 0,
+                      "Losses": 3,
+                      "SortOrder": 5
+                    }
+                  ]
+                }
+              ],
+              "Brackets": [],
+              "Clusters": []
+            },
+            {
+              "RoundId": 969609748,
+              "Pools": [],
+              "Brackets": [
+                {
+                  "BracketId": 576379733,
+                  "BracketName": "Championship",
+                  "Stage": [
+                    {
+                      "StageId": 407511593,
+                      "StageName": "Championship",
+                      "Games": [
+                        {
+                          "EventGameId": 167745256,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "2:00 PM",
+                          "HomeTeamId": 181702285,
+                          "AwayTeamId": 178331147,
+                          "HomeTeamName": "WOMP (1)",
+                          "AwayTeamName": "Crypt (2)",
+                          "HomeTeamScore": "0",
+                          "AwayTeamScore": "0",
+                          "FieldName": "Field 5A",
+                          "GameStatus": "Cancelled",
+                          "GameName": "G1"
+                        }
+                      ]
+                    },
+                    {
+                      "StageId": 88776639,
+                      "StageName": "Semis",
+                      "Games": [
+                        {
+                          "EventGameId": 923239195,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "12:15 PM",
+                          "HomeTeamId": 181702285,
+                          "AwayTeamId": 45697534,
+                          "HomeTeamName": "WOMP (1)",
+                          "AwayTeamName": "Atlanta Arson (4)",
+                          "HomeTeamScore": "11",
+                          "AwayTeamScore": "6",
+                          "FieldName": "Field 5A",
+                          "GameStatus": "Final",
+                          "GameName": "G1"
+                        },
+                        {
+                          "EventGameId": 111404034,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "12:15 PM",
+                          "HomeTeamId": 732670973,
+                          "AwayTeamId": 178331147,
+                          "HomeTeamName": "Black Lung (5)",
+                          "AwayTeamName": "Crypt (2)",
+                          "HomeTeamScore": "10",
+                          "AwayTeamScore": "13",
+                          "FieldName": "Field 5B",
+                          "GameStatus": "Final",
+                          "GameName": "G2"
+                        }
+                      ]
+                    },
+                    {
+                      "StageId": 985669660,
+                      "StageName": "Quarters",
+                      "Games": [
+                        {
+                          "EventGameId": 530792105,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "8:45 AM",
+                          "HomeTeamId": 181702285,
+                          "AwayTeamId": 111683817,
+                          "HomeTeamName": "WOMP (1)",
+                          "AwayTeamName": "Queen City Kings (7)",
+                          "HomeTeamScore": "13",
+                          "AwayTeamScore": "5",
+                          "FieldName": "Field 2",
+                          "GameStatus": "Final",
+                          "GameName": "G1"
+                        },
+                        {
+                          "EventGameId": 430573256,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "8:45 AM",
+                          "HomeTeamId": 45697534,
+                          "AwayTeamId": 310598607,
+                          "HomeTeamName": "Atlanta Arson (4)",
+                          "AwayTeamName": "ElecTriCity (14)",
+                          "HomeTeamScore": "13",
+                          "AwayTeamScore": "7",
+                          "FieldName": "Field 3",
+                          "GameStatus": "Final",
+                          "GameName": "G2"
+                        },
+                        {
+                          "EventGameId": 923073055,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "8:45 AM",
+                          "HomeTeamId": 675816037,
+                          "AwayTeamId": 732670973,
+                          "HomeTeamName": "Triumph (3)",
+                          "AwayTeamName": "Black Lung (5)",
+                          "HomeTeamScore": "10",
+                          "AwayTeamScore": "11",
+                          "FieldName": "Field 6A",
+                          "GameStatus": "Final",
+                          "GameName": "G3"
+                        },
+                        {
+                          "EventGameId": 457108136,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "8:45 AM",
+                          "HomeTeamId": 178331147,
+                          "AwayTeamId": 29193325,
+                          "HomeTeamName": "Crypt (2)",
+                          "AwayTeamName": "Charleston Heat Stroke (8)",
+                          "HomeTeamScore": "13",
+                          "AwayTeamScore": "4",
+                          "FieldName": "Field 6B",
+                          "GameStatus": "Final",
+                          "GameName": "G4"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "BracketId": 781296990,
+                  "BracketName": "3rd Place",
+                  "Stage": [
+                    {
+                      "StageId": 214881013,
+                      "StageName": "3rd Place",
+                      "Games": [
+                        {
+                          "EventGameId": 393265081,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "2:00 PM",
+                          "HomeTeamId": 45697534,
+                          "AwayTeamId": 732670973,
+                          "HomeTeamName": "Atlanta Arson (4)",
+                          "AwayTeamName": "Black Lung (5)",
+                          "HomeTeamScore": "0",
+                          "AwayTeamScore": "0",
+                          "FieldName": "Field 5B",
+                          "GameStatus": "Cancelled",
+                          "GameName": "G1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "BracketId": 268613344,
+                  "BracketName": "5th Place",
+                  "Stage": [
+                    {
+                      "StageId": 203473574,
+                      "StageName": "5th Place",
+                      "Games": [
+                        {
+                          "EventGameId": 700110496,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "2:00 PM",
+                          "HomeTeamId": 111683817,
+                          "AwayTeamId": 675816037,
+                          "HomeTeamName": "Queen City Kings (7)",
+                          "AwayTeamName": "Triumph (3)",
+                          "HomeTeamScore": "0",
+                          "AwayTeamScore": "0",
+                          "FieldName": "Field 4A",
+                          "GameStatus": "Cancelled",
+                          "GameName": "G1"
+                        }
+                      ]
+                    },
+                    {
+                      "StageId": 785073923,
+                      "StageName": "5th Semis",
+                      "Games": [
+                        {
+                          "EventGameId": 315891423,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "12:15 PM",
+                          "HomeTeamId": 111683817,
+                          "AwayTeamId": 310598607,
+                          "HomeTeamName": "Queen City Kings (7)",
+                          "AwayTeamName": "ElecTriCity (14)",
+                          "HomeTeamScore": "13",
+                          "AwayTeamScore": "11",
+                          "FieldName": "Field 4A",
+                          "GameStatus": "Final",
+                          "GameName": "G1"
+                        },
+                        {
+                          "EventGameId": 71323832,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "12:15 PM",
+                          "HomeTeamId": 675816037,
+                          "AwayTeamId": 29193325,
+                          "HomeTeamName": "Triumph (3)",
+                          "AwayTeamName": "Charleston Heat Stroke (8)",
+                          "HomeTeamScore": "13",
+                          "AwayTeamScore": "9",
+                          "FieldName": "Field 4B",
+                          "GameStatus": "Final",
+                          "GameName": "G2"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "BracketId": 392896319,
+                  "BracketName": "7th Place",
+                  "Stage": [
+                    {
+                      "StageId": 242049826,
+                      "StageName": "7th Place",
+                      "Games": [
+                        {
+                          "EventGameId": 199822663,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "2:00 PM",
+                          "HomeTeamId": 310598607,
+                          "AwayTeamId": 29193325,
+                          "HomeTeamName": "ElecTriCity (14)",
+                          "AwayTeamName": "Charleston Heat Stroke (8)",
+                          "HomeTeamScore": "0",
+                          "AwayTeamScore": "0",
+                          "FieldName": "Field 4B",
+                          "GameStatus": "Cancelled",
+                          "GameName": "G1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "BracketId": 187639152,
+                  "BracketName": "9th Place",
+                  "Stage": [
+                    {
+                      "StageId": 506144993,
+                      "StageName": "9th Place",
+                      "Games": [
+                        {
+                          "EventGameId": 507489417,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "12:15 PM",
+                          "HomeTeamId": 333233262,
+                          "AwayTeamId": 693640096,
+                          "HomeTeamName": "Atlanta Outlaws (13)",
+                          "AwayTeamName": "Gambit (15)",
+                          "HomeTeamScore": "13",
+                          "AwayTeamScore": "9",
+                          "FieldName": "Field 6A",
+                          "GameStatus": "Final",
+                          "GameName": "G1"
+                        }
+                      ]
+                    },
+                    {
+                      "StageId": 769564914,
+                      "StageName": "9th Semis",
+                      "Games": [
+                        {
+                          "EventGameId": 317005169,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "10:30 AM",
+                          "HomeTeamId": 689136246,
+                          "AwayTeamId": 333233262,
+                          "HomeTeamName": "Space Cowboys (9)",
+                          "AwayTeamName": "Atlanta Outlaws (13)",
+                          "HomeTeamScore": "6",
+                          "AwayTeamScore": "13",
+                          "FieldName": "Field 4A",
+                          "GameStatus": "Final",
+                          "GameName": "G1"
+                        },
+                        {
+                          "EventGameId": 920456718,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "10:30 AM",
+                          "HomeTeamId": 397956438,
+                          "AwayTeamId": 693640096,
+                          "HomeTeamName": "NC Brickhouse (12)",
+                          "AwayTeamName": "Gambit (15)",
+                          "HomeTeamScore": "9",
+                          "AwayTeamScore": "10",
+                          "FieldName": "Field 4B",
+                          "GameStatus": "Final",
+                          "GameName": "G2"
+                        }
+                      ]
+                    },
+                    {
+                      "StageId": 883183020,
+                      "StageName": "9th Quarters",
+                      "Games": [
+                        {
+                          "EventGameId": 929809029,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "8:45 AM",
+                          "HomeTeamId": 689136246,
+                          "AwayTeamId": 441516491,
+                          "HomeTeamName": "Space Cowboys (9)",
+                          "AwayTeamName": "Tennessee Folklore (10)",
+                          "HomeTeamScore": "13",
+                          "AwayTeamScore": "9",
+                          "FieldName": "Field 4A",
+                          "GameStatus": "Final",
+                          "GameName": "G1"
+                        },
+                        {
+                          "EventGameId": 74712101,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "8:45 AM",
+                          "HomeTeamId": 333233262,
+                          "AwayTeamId": 259377159,
+                          "HomeTeamName": "Atlanta Outlaws (13)",
+                          "AwayTeamName": "Hydra (11)",
+                          "HomeTeamScore": "13",
+                          "AwayTeamScore": "4",
+                          "FieldName": "Field 5A",
+                          "GameStatus": "Final",
+                          "GameName": "G2"
+                        },
+                        {
+                          "EventGameId": 168783049,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "8:45 AM",
+                          "HomeTeamId": 594746380,
+                          "AwayTeamId": 397956438,
+                          "HomeTeamName": "Psychedelic (6)",
+                          "AwayTeamName": "NC Brickhouse (12)",
+                          "HomeTeamScore": "9",
+                          "AwayTeamScore": "11",
+                          "FieldName": "Field 5B",
+                          "GameStatus": "Final",
+                          "GameName": "G3"
+                        },
+                        {
+                          "EventGameId": 561038460,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "8:45 AM",
+                          "HomeTeamId": 693640096,
+                          "AwayTeamId": 725783904,
+                          "HomeTeamName": "Gambit (15)",
+                          "AwayTeamName": "Savannah Wild (16)",
+                          "HomeTeamScore": "13",
+                          "AwayTeamScore": "10",
+                          "FieldName": "Field 4B",
+                          "GameStatus": "Final",
+                          "GameName": "G4"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "BracketId": 734620377,
+                  "BracketName": "11th Place",
+                  "Stage": [
+                    {
+                      "StageId": 245775344,
+                      "StageName": "11th Place",
+                      "Games": [
+                        {
+                          "EventGameId": 942072235,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "2:00 PM",
+                          "HomeTeamId": 689136246,
+                          "AwayTeamId": 397956438,
+                          "HomeTeamName": "Space Cowboys (9)",
+                          "AwayTeamName": "NC Brickhouse (12)",
+                          "HomeTeamScore": "W",
+                          "AwayTeamScore": "L",
+                          "FieldName": "Field 6B",
+                          "GameStatus": "Final",
+                          "GameName": "G1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "BracketId": 88299010,
+                  "BracketName": "13th Place",
+                  "Stage": [
+                    {
+                      "StageId": 805164126,
+                      "StageName": "13th Place",
+                      "Games": [
+                        {
+                          "EventGameId": 231620378,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "12:15 PM",
+                          "HomeTeamId": 441516491,
+                          "AwayTeamId": 594746380,
+                          "HomeTeamName": "Tennessee Folklore (10)",
+                          "AwayTeamName": "Psychedelic (6)",
+                          "HomeTeamScore": "9",
+                          "AwayTeamScore": "13",
+                          "FieldName": "Field 1A",
+                          "GameStatus": "Final",
+                          "GameName": "G1"
+                        }
+                      ]
+                    },
+                    {
+                      "StageId": 46376135,
+                      "StageName": "13th Semis",
+                      "Games": [
+                        {
+                          "EventGameId": 655165570,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "10:30 AM",
+                          "HomeTeamId": 441516491,
+                          "AwayTeamId": 259377159,
+                          "HomeTeamName": "Tennessee Folklore (10)",
+                          "AwayTeamName": "Hydra (11)",
+                          "HomeTeamScore": "13",
+                          "AwayTeamScore": "8",
+                          "FieldName": "Field 5A",
+                          "GameStatus": "Final",
+                          "GameName": "G1"
+                        },
+                        {
+                          "EventGameId": 562727620,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "10:30 AM",
+                          "HomeTeamId": 594746380,
+                          "AwayTeamId": 725783904,
+                          "HomeTeamName": "Psychedelic (6)",
+                          "AwayTeamName": "Savannah Wild (16)",
+                          "HomeTeamScore": "13",
+                          "AwayTeamScore": "7",
+                          "FieldName": "Field 5B",
+                          "GameStatus": "Final",
+                          "GameName": "G2"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "BracketId": 430766537,
+                  "BracketName": "15th Place",
+                  "Stage": [
+                    {
+                      "StageId": 513115115,
+                      "StageName": "15th Place",
+                      "Games": [
+                        {
+                          "EventGameId": 135684105,
+                          "StartDate": "07/19/2026",
+                          "StartTime": "12:15 PM",
+                          "HomeTeamId": 259377159,
+                          "AwayTeamId": 725783904,
+                          "HomeTeamName": "Hydra (11)",
+                          "AwayTeamName": "Savannah Wild (16)",
+                          "HomeTeamScore": "7",
+                          "AwayTeamScore": "9",
+                          "FieldName": "Field 1B",
+                          "GameStatus": "Final",
+                          "GameName": "G1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "Clusters": []
+            }
+          ],
+          "EventGroupName": "Club - Men",
+          "EventGroupId": 72928614,
+          "UsauUrl": "https://play.usaultimate.org/events/filling-the-void-2026/schedule/men/club-men/"
+        },
+        {
+          "EventRounds": [
+            {
+              "RoundId": 12917835,
+              "Pools": [
+                {
+                  "Name": "Pool A",
+                  "PoolId": 242613007,
+                  "Games": [
+                    {
+                      "EventGameId": 484053860,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "8:15 AM",
+                      "FieldName": "Field 5B",
+                      "HomeTeamId": 422282363,
+                      "AwayTeamId": 678184745,
+                      "HomeTeamName": "Malice in Wonderland (4)",
+                      "AwayTeamName": "Verdant (9)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "1",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=ckDfuW8j9LswJlpf60uegzyxvguBjk9JjptgUmXtIDk%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=LkEznJ2ADfHaSk6O7hyvfNcpbfs3en2IZjHG1H8viVY%3d"
+                    },
+                    {
+                      "EventGameId": 788571662,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "8:15 AM",
+                      "FieldName": "Field 7",
+                      "HomeTeamId": 601764110,
+                      "AwayTeamId": 983963198,
+                      "HomeTeamName": "Roma Ultima (1)",
+                      "AwayTeamName": "Rampage (7)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "2",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=K6hyRIfJW7D48l0UrzxgeoUmWDguI%2fK8b5QIaUDPpms%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=x301Xuy2pJnWmgrSnNoN0sFLt9exPNF7BejXk%2bZopyc%3d"
+                    },
+                    {
+                      "EventGameId": 997673666,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "8:15 AM",
+                      "FieldName": "Field 5A",
+                      "HomeTeamId": 793087619,
+                      "AwayTeamId": 77747988,
+                      "HomeTeamName": "Catalyst (2)",
+                      "AwayTeamName": "Blue Ridge Sasquatch (6)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "11",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=sxHjH7ylGbZz8Dkv2QGPg0bSFcpsGKCqGxK79fK4LSA%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=gE1%2fCwJSBTdgKQwqPZFcgPxBhjr3yhSuyIjq8ELBy3Q%3d"
+                    },
+                    {
+                      "EventGameId": 255310829,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "8:15 AM",
+                      "FieldName": "Field 1A",
+                      "HomeTeamId": 215107822,
+                      "AwayTeamId": 238492153,
+                      "HomeTeamName": "Murmur (3)",
+                      "AwayTeamName": "Magnanimouse (8)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "4",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=in1wcXPUU5bGe9bdk3zKwPcw3WyTqd89kbRZlPqV%2fhw%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=GBjayTLpQL3EfQIzVlXnIHPGlM0rO3yxlZ1MZX2L2lM%3d"
+                    },
+                    {
+                      "EventGameId": 574046871,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "10:00 AM",
+                      "FieldName": "Field 5A",
+                      "HomeTeamId": 793087619,
+                      "AwayTeamId": 422282363,
+                      "HomeTeamName": "Catalyst (2)",
+                      "AwayTeamName": "Malice in Wonderland (4)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "9",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=sxHjH7ylGbZz8Dkv2QGPg0bSFcpsGKCqGxK79fK4LSA%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=ckDfuW8j9LswJlpf60uegzyxvguBjk9JjptgUmXtIDk%3d"
+                    },
+                    {
+                      "EventGameId": 952719822,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "10:00 AM",
+                      "FieldName": "Field 7",
+                      "HomeTeamId": 601764110,
+                      "AwayTeamId": 215107822,
+                      "HomeTeamName": "Roma Ultima (1)",
+                      "AwayTeamName": "Murmur (3)",
+                      "HomeTeamScore": "6",
+                      "AwayTeamScore": "9",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=K6hyRIfJW7D48l0UrzxgeoUmWDguI%2fK8b5QIaUDPpms%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=in1wcXPUU5bGe9bdk3zKwPcw3WyTqd89kbRZlPqV%2fhw%3d"
+                    },
+                    {
+                      "EventGameId": 625995010,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "10:00 AM",
+                      "FieldName": "Field 1A",
+                      "HomeTeamId": 238492153,
+                      "AwayTeamId": 678184745,
+                      "HomeTeamName": "Magnanimouse (8)",
+                      "AwayTeamName": "Verdant (9)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "3",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=GBjayTLpQL3EfQIzVlXnIHPGlM0rO3yxlZ1MZX2L2lM%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=LkEznJ2ADfHaSk6O7hyvfNcpbfs3en2IZjHG1H8viVY%3d"
+                    },
+                    {
+                      "EventGameId": 3630080,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "10:00 AM",
+                      "FieldName": "Field 5B",
+                      "HomeTeamId": 478237747,
+                      "AwayTeamId": 77747988,
+                      "HomeTeamName": "S.O.S (5)",
+                      "AwayTeamName": "Blue Ridge Sasquatch (6)",
+                      "HomeTeamScore": "11",
+                      "AwayTeamScore": "10",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=1t3vrNNfSsVxL7lYGJpvoxYVz865Dp4OCwPTFfoXOQw%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=gE1%2fCwJSBTdgKQwqPZFcgPxBhjr3yhSuyIjq8ELBy3Q%3d"
+                    },
+                    {
+                      "EventGameId": 7908018,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "12:00 PM",
+                      "FieldName": "Field 7",
+                      "HomeTeamId": 601764110,
+                      "AwayTeamId": 678184745,
+                      "HomeTeamName": "Roma Ultima (1)",
+                      "AwayTeamName": "Verdant (9)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "0",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=K6hyRIfJW7D48l0UrzxgeoUmWDguI%2fK8b5QIaUDPpms%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=LkEznJ2ADfHaSk6O7hyvfNcpbfs3en2IZjHG1H8viVY%3d"
+                    },
+                    {
+                      "EventGameId": 927861363,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "12:00 PM",
+                      "FieldName": "Field 1A",
+                      "HomeTeamId": 77747988,
+                      "AwayTeamId": 238492153,
+                      "HomeTeamName": "Blue Ridge Sasquatch (6)",
+                      "AwayTeamName": "Magnanimouse (8)",
+                      "HomeTeamScore": "9",
+                      "AwayTeamScore": "8",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=gE1%2fCwJSBTdgKQwqPZFcgPxBhjr3yhSuyIjq8ELBy3Q%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=GBjayTLpQL3EfQIzVlXnIHPGlM0rO3yxlZ1MZX2L2lM%3d"
+                    },
+                    {
+                      "EventGameId": 327411739,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "12:00 PM",
+                      "FieldName": "Field 6B",
+                      "HomeTeamId": 215107822,
+                      "AwayTeamId": 478237747,
+                      "HomeTeamName": "Murmur (3)",
+                      "AwayTeamName": "S.O.S (5)",
+                      "HomeTeamScore": "12",
+                      "AwayTeamScore": "3",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=in1wcXPUU5bGe9bdk3zKwPcw3WyTqd89kbRZlPqV%2fhw%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=1t3vrNNfSsVxL7lYGJpvoxYVz865Dp4OCwPTFfoXOQw%3d"
+                    },
+                    {
+                      "EventGameId": 445888614,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "12:00 PM",
+                      "FieldName": "Field 1B",
+                      "HomeTeamId": 422282363,
+                      "AwayTeamId": 983963198,
+                      "HomeTeamName": "Malice in Wonderland (4)",
+                      "AwayTeamName": "Rampage (7)",
+                      "HomeTeamScore": "12",
+                      "AwayTeamScore": "4",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=ckDfuW8j9LswJlpf60uegzyxvguBjk9JjptgUmXtIDk%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=x301Xuy2pJnWmgrSnNoN0sFLt9exPNF7BejXk%2bZopyc%3d"
+                    },
+                    {
+                      "EventGameId": 255981373,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "2:00 PM",
+                      "FieldName": "Field 7",
+                      "HomeTeamId": 983963198,
+                      "AwayTeamId": 238492153,
+                      "HomeTeamName": "Rampage (7)",
+                      "AwayTeamName": "Magnanimouse (8)",
+                      "HomeTeamScore": "4",
+                      "AwayTeamScore": "5",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=x301Xuy2pJnWmgrSnNoN0sFLt9exPNF7BejXk%2bZopyc%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=GBjayTLpQL3EfQIzVlXnIHPGlM0rO3yxlZ1MZX2L2lM%3d"
+                    },
+                    {
+                      "EventGameId": 906542276,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "2:00 PM",
+                      "FieldName": "Field 6B",
+                      "HomeTeamId": 215107822,
+                      "AwayTeamId": 77747988,
+                      "HomeTeamName": "Murmur (3)",
+                      "AwayTeamName": "Blue Ridge Sasquatch (6)",
+                      "HomeTeamScore": "12",
+                      "AwayTeamScore": "4",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=in1wcXPUU5bGe9bdk3zKwPcw3WyTqd89kbRZlPqV%2fhw%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=gE1%2fCwJSBTdgKQwqPZFcgPxBhjr3yhSuyIjq8ELBy3Q%3d"
+                    },
+                    {
+                      "EventGameId": 690392625,
+                      "StartDate": "07/18/2026",
+                      "StartTime": "2:00 PM",
+                      "FieldName": "Field 1A",
+                      "HomeTeamId": 793087619,
+                      "AwayTeamId": 478237747,
+                      "HomeTeamName": "Catalyst (2)",
+                      "AwayTeamName": "S.O.S (5)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "0",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=sxHjH7ylGbZz8Dkv2QGPg0bSFcpsGKCqGxK79fK4LSA%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=1t3vrNNfSsVxL7lYGJpvoxYVz865Dp4OCwPTFfoXOQw%3d"
+                    },
+                    {
+                      "EventGameId": 146485579,
+                      "StartDate": "07/19/2026",
+                      "StartTime": "8:45 AM",
+                      "FieldName": "Field 9A",
+                      "HomeTeamId": 478237747,
+                      "AwayTeamId": 238492153,
+                      "HomeTeamName": "S.O.S (5)",
+                      "AwayTeamName": "Magnanimouse (8)",
+                      "HomeTeamScore": "8",
+                      "AwayTeamScore": "10",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=1t3vrNNfSsVxL7lYGJpvoxYVz865Dp4OCwPTFfoXOQw%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=GBjayTLpQL3EfQIzVlXnIHPGlM0rO3yxlZ1MZX2L2lM%3d"
+                    },
+                    {
+                      "EventGameId": 522432845,
+                      "StartDate": "07/19/2026",
+                      "StartTime": "8:45 AM",
+                      "FieldName": "Field 7",
+                      "HomeTeamId": 601764110,
+                      "AwayTeamId": 793087619,
+                      "HomeTeamName": "Roma Ultima (1)",
+                      "AwayTeamName": "Catalyst (2)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "7",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=K6hyRIfJW7D48l0UrzxgeoUmWDguI%2fK8b5QIaUDPpms%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=sxHjH7ylGbZz8Dkv2QGPg0bSFcpsGKCqGxK79fK4LSA%3d"
+                    },
+                    {
+                      "EventGameId": 783026028,
+                      "StartDate": "07/19/2026",
+                      "StartTime": "8:45 AM",
+                      "FieldName": "Field 1A",
+                      "HomeTeamId": 215107822,
+                      "AwayTeamId": 422282363,
+                      "HomeTeamName": "Murmur (3)",
+                      "AwayTeamName": "Malice in Wonderland (4)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "10",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=in1wcXPUU5bGe9bdk3zKwPcw3WyTqd89kbRZlPqV%2fhw%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=ckDfuW8j9LswJlpf60uegzyxvguBjk9JjptgUmXtIDk%3d"
+                    },
+                    {
+                      "EventGameId": 631025543,
+                      "StartDate": "07/19/2026",
+                      "StartTime": "8:45 AM",
+                      "FieldName": "Field 1B",
+                      "HomeTeamId": 983963198,
+                      "AwayTeamId": 678184745,
+                      "HomeTeamName": "Rampage (7)",
+                      "AwayTeamName": "Verdant (9)",
+                      "HomeTeamScore": "10",
+                      "AwayTeamScore": "6",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=x301Xuy2pJnWmgrSnNoN0sFLt9exPNF7BejXk%2bZopyc%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=LkEznJ2ADfHaSk6O7hyvfNcpbfs3en2IZjHG1H8viVY%3d"
+                    },
+                    {
+                      "EventGameId": 865209186,
+                      "StartDate": "07/19/2026",
+                      "StartTime": "10:30 AM",
+                      "FieldName": "Field 7",
+                      "HomeTeamId": 601764110,
+                      "AwayTeamId": 478237747,
+                      "HomeTeamName": "Roma Ultima (1)",
+                      "AwayTeamName": "S.O.S (5)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "2",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=K6hyRIfJW7D48l0UrzxgeoUmWDguI%2fK8b5QIaUDPpms%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=1t3vrNNfSsVxL7lYGJpvoxYVz865Dp4OCwPTFfoXOQw%3d"
+                    },
+                    {
+                      "EventGameId": 914105604,
+                      "StartDate": "07/19/2026",
+                      "StartTime": "10:30 AM",
+                      "FieldName": "Field 3",
+                      "HomeTeamId": 77747988,
+                      "AwayTeamId": 678184745,
+                      "HomeTeamName": "Blue Ridge Sasquatch (6)",
+                      "AwayTeamName": "Verdant (9)",
+                      "HomeTeamScore": "11",
+                      "AwayTeamScore": "6",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=gE1%2fCwJSBTdgKQwqPZFcgPxBhjr3yhSuyIjq8ELBy3Q%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=LkEznJ2ADfHaSk6O7hyvfNcpbfs3en2IZjHG1H8viVY%3d"
+                    },
+                    {
+                      "EventGameId": 323151039,
+                      "StartDate": "07/19/2026",
+                      "StartTime": "10:30 AM",
+                      "FieldName": "Field 6B",
+                      "HomeTeamId": 793087619,
+                      "AwayTeamId": 983963198,
+                      "HomeTeamName": "Catalyst (2)",
+                      "AwayTeamName": "Rampage (7)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "2",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=sxHjH7ylGbZz8Dkv2QGPg0bSFcpsGKCqGxK79fK4LSA%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=x301Xuy2pJnWmgrSnNoN0sFLt9exPNF7BejXk%2bZopyc%3d"
+                    },
+                    {
+                      "EventGameId": 747369889,
+                      "StartDate": "07/19/2026",
+                      "StartTime": "10:30 AM",
+                      "FieldName": "Field 2",
+                      "HomeTeamId": 422282363,
+                      "AwayTeamId": 238492153,
+                      "HomeTeamName": "Malice in Wonderland (4)",
+                      "AwayTeamName": "Magnanimouse (8)",
+                      "HomeTeamScore": "12",
+                      "AwayTeamScore": "3",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=ckDfuW8j9LswJlpf60uegzyxvguBjk9JjptgUmXtIDk%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=GBjayTLpQL3EfQIzVlXnIHPGlM0rO3yxlZ1MZX2L2lM%3d"
+                    },
+                    {
+                      "EventGameId": 480695556,
+                      "StartDate": "07/19/2026",
+                      "StartTime": "12:15 PM",
+                      "FieldName": "Field 7",
+                      "HomeTeamId": 601764110,
+                      "AwayTeamId": 422282363,
+                      "HomeTeamName": "Roma Ultima (1)",
+                      "AwayTeamName": "Malice in Wonderland (4)",
+                      "HomeTeamScore": "13",
+                      "AwayTeamScore": "6",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=K6hyRIfJW7D48l0UrzxgeoUmWDguI%2fK8b5QIaUDPpms%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=ckDfuW8j9LswJlpf60uegzyxvguBjk9JjptgUmXtIDk%3d"
+                    },
+                    {
+                      "EventGameId": 613268297,
+                      "StartDate": "07/19/2026",
+                      "StartTime": "12:15 PM",
+                      "FieldName": "Field 6B",
+                      "HomeTeamId": 793087619,
+                      "AwayTeamId": 215107822,
+                      "HomeTeamName": "Catalyst (2)",
+                      "AwayTeamName": "Murmur (3)",
+                      "HomeTeamScore": "9",
+                      "AwayTeamScore": "11",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=sxHjH7ylGbZz8Dkv2QGPg0bSFcpsGKCqGxK79fK4LSA%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=in1wcXPUU5bGe9bdk3zKwPcw3WyTqd89kbRZlPqV%2fhw%3d"
+                    },
+                    {
+                      "EventGameId": 545681527,
+                      "StartDate": "07/19/2026",
+                      "StartTime": "12:15 PM",
+                      "FieldName": "Field 2",
+                      "HomeTeamId": 478237747,
+                      "AwayTeamId": 678184745,
+                      "HomeTeamName": "S.O.S (5)",
+                      "AwayTeamName": "Verdant (9)",
+                      "HomeTeamScore": "0",
+                      "AwayTeamScore": "0",
+                      "GameStatus": "Scheduled",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=1t3vrNNfSsVxL7lYGJpvoxYVz865Dp4OCwPTFfoXOQw%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=LkEznJ2ADfHaSk6O7hyvfNcpbfs3en2IZjHG1H8viVY%3d"
+                    },
+                    {
+                      "EventGameId": 483728220,
+                      "StartDate": "07/19/2026",
+                      "StartTime": "12:15 PM",
+                      "FieldName": "Field 3",
+                      "HomeTeamId": 77747988,
+                      "AwayTeamId": 983963198,
+                      "HomeTeamName": "Blue Ridge Sasquatch (6)",
+                      "AwayTeamName": "Rampage (7)",
+                      "HomeTeamScore": "12",
+                      "AwayTeamScore": "10",
+                      "GameStatus": "Final",
+                      "HomeTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=gE1%2fCwJSBTdgKQwqPZFcgPxBhjr3yhSuyIjq8ELBy3Q%3d",
+                      "AwayTeamEventLink": "https://play.usaultimate.org/events/teams/?EventTeamId=x301Xuy2pJnWmgrSnNoN0sFLt9exPNF7BejXk%2bZopyc%3d"
+                    }
+                  ],
+                  "Standings": [
+                    {
+                      "GoalsFor": 70,
+                      "GoalsAgainst": 36,
+                      "GoalDifferential": 34,
+                      "TeamName": "Murmur (3)",
+                      "Ties": 0,
+                      "TieBreaker": "",
+                      "Wins": 6,
+                      "Losses": 0,
+                      "SortOrder": 2
+                    },
+                    {
+                      "GoalsFor": 71,
+                      "GoalsAgainst": 26,
+                      "GoalDifferential": 45,
+                      "TeamName": "Roma Ultima (1)",
+                      "Ties": 0,
+                      "TieBreaker": "",
+                      "Wins": 5,
+                      "Losses": 1,
+                      "SortOrder": 3
+                    },
+                    {
+                      "GoalsFor": 68,
+                      "GoalsAgainst": 46,
+                      "GoalDifferential": 22,
+                      "TeamName": "Catalyst (2)",
+                      "Ties": 0,
+                      "TieBreaker": "",
+                      "Wins": 4,
+                      "Losses": 2,
+                      "SortOrder": 4
+                    },
+                    {
+                      "GoalsFor": 62,
+                      "GoalsAgainst": 47,
+                      "GoalDifferential": 15,
+                      "TeamName": "Malice in Wonderland (4)",
+                      "Ties": 1,
+                      "TieBreaker": "",
+                      "Wins": 3,
+                      "Losses": 3,
+                      "SortOrder": 5
+                    },
+                    {
+                      "GoalsFor": 57,
+                      "GoalsAgainst": 60,
+                      "GoalDifferential": -3,
+                      "TeamName": "Blue Ridge Sasquatch (6)",
+                      "Ties": 1,
+                      "TieBreaker": "",
+                      "Wins": 3,
+                      "Losses": 3,
+                      "SortOrder": 6
+                    },
+                    {
+                      "GoalsFor": 43,
+                      "GoalsAgainst": 49,
+                      "GoalDifferential": -6,
+                      "TeamName": "Magnanimouse (8)",
+                      "Ties": 0,
+                      "TieBreaker": "",
+                      "Wins": 3,
+                      "Losses": 3,
+                      "SortOrder": 7
+                    },
+                    {
+                      "GoalsFor": 32,
+                      "GoalsAgainst": 61,
+                      "GoalDifferential": -29,
+                      "TeamName": "Rampage (7)",
+                      "Ties": 0,
+                      "TieBreaker": "",
+                      "Wins": 1,
+                      "Losses": 5,
+                      "SortOrder": 8
+                    },
+                    {
+                      "GoalsFor": 24,
+                      "GoalsAgainst": 58,
+                      "GoalDifferential": -34,
+                      "TeamName": "S.O.S (5)",
+                      "Ties": 0,
+                      "TieBreaker": "",
+                      "Wins": 1,
+                      "Losses": 4,
+                      "SortOrder": 9
+                    },
+                    {
+                      "GoalsFor": 16,
+                      "GoalsAgainst": 60,
+                      "GoalDifferential": -44,
+                      "TeamName": "Verdant (9)",
+                      "Ties": 0,
+                      "TieBreaker": "",
+                      "Wins": 0,
+                      "Losses": 5,
+                      "SortOrder": 10
+                    }
+                  ]
+                }
+              ],
+              "Brackets": [],
+              "Clusters": []
+            }
+          ],
+          "EventGroupName": "Club - Mixed",
+          "EventGroupId": 227595957,
+          "UsauUrl": "https://play.usaultimate.org/events/filling-the-void-2026/schedule/mixed/club-mixed/"
+        }
+      ],
+      "EventId": 207013840
+    }
+  ],
+  "page": 1,
+  "totalHits": 1,
+  "hitsPerPage": 20,
+  "pages": 1
+}
