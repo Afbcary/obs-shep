@@ -4,6 +4,16 @@
   margin: 1rem 1rem 1rem 0;
 }
 
+.errorRow {
+  background-color: #f8d7da;
+  color: #842029;
+}
+
+.errorCell {
+  background-color: #f8d7da;
+  color: #842029;
+}
+
 .YCC17-G {
   color: hsl(308, 100%, 80%);
 }

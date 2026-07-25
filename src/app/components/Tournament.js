@@ -17,6 +17,8 @@ export default function Tournament() {
   const [schedule, setSchedule] = useState(null);
   const [sortedDatetimes, setDateTimes] = useState(null);
   const [sortedFields, setFields] = useState(null);
+  const [missingFieldGames, setMissingFieldGames] = useState(new Map());
+  const [fieldConflicts, setFieldConflicts] = useState(new Map());
   const [minimumStartDate, setMinimumStartDate] = useState(() => {
     const date = new Date();
     date.setDate(date.getDate() - 7);
@@ -197,30 +199,51 @@ export default function Tournament() {
     const schedule = new Map(); // {fieldName: {datetimeString: gameString}}
     const uniqueDatetimes = new Set();
     const uniqueFields = new Set();
+    const missingFieldGames = new Map(); // {datetimeString: [game]}
+    const fieldConflicts = new Map(); // {datetimeString: [{field, game}]}
     if (allGames && allGames.size > 0) {
       for (const [division, games] of allGames.entries()) {
         games.forEach(game => {
-          if (!game.FieldName || !game.StartTime || !game.StartDate) {
-            console.log(`skipped game without field, time, or date: ${JSON.stringify(game)}`)
+          if (!game.StartTime || !game.StartDate) {
+            console.log(`skipped game without time or date: ${JSON.stringify(game)}`)
             return;
           }
           const dt = setTimeAndDate(new Date(), game.StartTime, game.StartDate)
-          const field = game.FieldName;
           const minutes = dt.getMinutes() >= 10 ? dt.getMinutes() : `0${dt.getMinutes()}`;
           const hours = dt.getHours() >= 10 ? dt.getHours() : `0${dt.getHours()}`;
           const datetimeString = `${dt.getMonth() + 1}/${dt.getDate()}: ${hours}:${minutes}`;
+          game.division = division;
+          game.title = `${game.HomeTeamName}-${game.AwayTeamName}`;
+
+          if (!game.FieldName) {
+            console.log(`skipped game without field: ${JSON.stringify(game)}`)
+            if (!missingFieldGames.has(datetimeString)) {
+              missingFieldGames.set(datetimeString, []);
+            }
+            missingFieldGames.get(datetimeString).push(game);
+            return;
+          }
+
+          const field = game.FieldName;
           uniqueFields.add(field);
           uniqueDatetimes.add(datetimeString);
 
           if (!schedule.has(field)) {
             schedule.set(field, new Map());
           }
-          if (schedule.get(field).get(datetimeString)) {
-            console.log(`Conflict detected: ${field} at ${datetimeString} already has a game assigned (${schedule.get(field).get(datetimeString)}). Not adding ${game.HomeTeamName}-${game.AwayTeamName}.`);
+          const existingGame = schedule.get(field).get(datetimeString);
+          if (existingGame) {
+            console.log(`Conflict detected: ${field} at ${datetimeString} already has a game assigned (${existingGame?.title}). Not adding ${game.title}.`);
+            if (!fieldConflicts.has(datetimeString)) {
+              fieldConflicts.set(datetimeString, []);
+            }
+            const conflictList = fieldConflicts.get(datetimeString);
+            if (typeof existingGame === 'object' && !conflictList.some(c => c.game === existingGame)) {
+              conflictList.push({ field, game: existingGame });
+            }
+            conflictList.push({ field, game });
             schedule.get(field).set(datetimeString, `CONFLICT (multiple games at this field/time)`);
           } else {
-            game.division = division;
-            game.title = `${game.HomeTeamName}-${game.AwayTeamName}`;
             schedule.get(field).set(datetimeString, game);
           }
         })
@@ -230,6 +253,8 @@ export default function Tournament() {
     setSchedule(schedule);
     setDateTimes([...uniqueDatetimes].sort());
     setFields(sortFields(uniqueFields));
+    setMissingFieldGames(missingFieldGames);
+    setFieldConflicts(fieldConflicts);
   }, [events]); // Dependency array
 
   return (
@@ -319,7 +344,7 @@ export default function Tournament() {
             </table>
           ) : <p>No tounaments found</p>}
         </div>
-        <ScheduleTable schedule={schedule} sortedDatetimes={sortedDatetimes} sortedFields={sortedFields} eventNames={getEventNames()} />
+        <ScheduleTable schedule={schedule} sortedDatetimes={sortedDatetimes} sortedFields={sortedFields} eventNames={getEventNames()} missingFieldGames={missingFieldGames} fieldConflicts={fieldConflicts} />
         <CapsTable sortedDatetimes={sortedDatetimes} />
         <div>
           <Image src={require('./images/clippy.gif')} width={200}
